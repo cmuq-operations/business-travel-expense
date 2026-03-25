@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMU Per Diem Calculator — Business Travel Expense</title>
+<style>
+  :root {
+    --cmu-red: #c41230;
+    --cmu-dark: #2d2d2d;
+    --cmu-gray: #6b6b6b;
+    --cmu-light: #f7f7f7;
+    --border: #ddd;
+    --highlight: #fff3cd;
+    --success: #d4edda;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--cmu-dark);
+    background: var(--cmu-light);
+    line-height: 1.5;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  header {
+    background: var(--cmu-red);
+    color: white;
+    padding: 16px 0;
+    margin-bottom: 24px;
+  }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 1.4rem; font-weight: 600; }
+  header .subtitle { font-size: 0.85rem; opacity: 0.85; }
+
+  .btn-print {
+    padding: 8px 18px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .btn-print:hover { background: rgba(255,255,255,0.3); }
+
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+    color: var(--cmu-red);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cmu-red);
+  }
+
+  .form-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; }
+  .form-group { display: flex; flex-direction: column; min-width: 140px; }
+  .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--cmu-gray); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group select {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--cmu-red); }
+
+  .toggle-group { display: inline-flex; gap: 0; }
+  .toggle-group button {
+    padding: 6px 16px;
+    border: 2px solid var(--cmu-red);
+    background: white;
+    color: var(--cmu-red);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .toggle-group button:first-child { border-radius: 4px 0 0 4px; }
+  .toggle-group button:last-child { border-radius: 0 4px 4px 0; }
+  .toggle-group button.active { background: var(--cmu-red); color: white; }
+
+  .btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-primary { background: var(--cmu-red); color: white; }
+  .btn-secondary { background: var(--cmu-gray); color: white; }
+  .btn-outline { background: white; color: var(--cmu-red); border: 2px solid var(--cmu-red); }
+  .btn-sm { padding: 4px 12px; font-size: 0.8rem; }
+  .btn-danger { background: #dc3545; color: white; }
+
+  .status { padding: 8px 12px; border-radius: 4px; font-size: 0.85rem; margin-top: 8px; display: none; }
+  .status.info { display: block; background: #e3f2fd; color: #1565c0; }
+  .status.success { display: block; background: var(--success); color: #155724; }
+  .status.error { display: block; background: #f8d7da; color: #721c24; }
+  .status.warning { display: block; background: var(--highlight); color: #856404; }
+
+  /* Segment styling */
+  .segment {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 14px;
+    background: var(--cmu-light);
+    position: relative;
+  }
+  .segment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .segment-header h3 {
+    font-size: 0.95rem;
+    color: var(--cmu-dark);
+  }
+  .segment-rate {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    background: var(--success);
+    border-radius: 4px;
+    color: #155724;
+    margin-top: 8px;
+    display: none;
+  }
+  .segment-rate.visible { display: block; }
+
+  /* Lodging toggle */
+  .lodging-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .lodging-row label { font-size: 0.85rem; font-weight: 600; color: var(--cmu-gray); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Daily grid table */
+  .grid-wrapper { overflow-x: auto; }
+  table.day-grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    table-layout: fixed;
+  }
+  table.day-grid th {
+    background: var(--cmu-dark);
+    color: white;
+    padding: 8px 6px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table.day-grid td {
+    padding: 5px 6px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  table.day-grid tr:hover { background: #f0f0f0; }
+  table.day-grid tr.first-last-day { background: var(--highlight); }
+  table.day-grid tr.first-last-day:hover { background: #ffe9a0; }
+  table.day-grid tr.transition-day { background: #e3f2fd; }
+  table.day-grid tr.transition-day:hover { background: #bbdefb; }
+  table.day-grid tr.extended-stay { background: #e8f5e9; }
+  table.day-grid td.amount { text-align: right; font-variant-numeric: tabular-nums; }
+  table.day-grid input[type="checkbox"] { width: 14px; height: 14px; cursor: pointer; vertical-align: middle; margin-right: 3px; }
+  table.day-grid .seg-divider td { background: var(--cmu-red); color: white; font-weight: 600; font-size: 0.8rem; padding: 4px 6px; }
+  /* Meal cell: checkbox + amount inline */
+  table.day-grid .meal-cell { white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+  table.day-grid .meal-cell .deducted { text-decoration: line-through; color: #999; }
+
+  .bulk-select { background: var(--cmu-light); border: 1px solid var(--border); border-radius: 4px; padding: 12px; margin-bottom: 14px; }
+
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .summary-box { background: var(--cmu-light); border-radius: 6px; padding: 14px; text-align: center; }
+  .summary-box .label { font-size: 0.75rem; text-transform: uppercase; color: var(--cmu-gray); font-weight: 600; letter-spacing: 0.5px; }
+  .summary-box .value { font-size: 1.5rem; font-weight: 700; color: var(--cmu-dark); margin-top: 4px; }
+  .summary-box.total .value { color: var(--cmu-red); }
+
+  .hidden { display: none !important; }
+
+  @media print {
+    body { background: white; font-size: 11px; }
+    .no-print { display: none !important; }
+    .container { max-width: 100%; padding: 0; }
+    header { background: white !important; color: black !important; padding: 8px 0; margin-bottom: 10px; border-bottom: 3px solid var(--cmu-red); }
+    header h1 { color: var(--cmu-red); }
+    header .subtitle { color: var(--cmu-gray); }
+    .card { border: none; padding: 10px 0; margin-bottom: 10px; break-inside: avoid; }
+    .card h2 { font-size: 1rem; }
+    .segment { background: white !important; border: 1px solid var(--border); padding: 8px; }
+    table.day-grid { font-size: 10px; }
+    table.day-grid th { background: var(--cmu-dark) !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 4px 6px; }
+    table.day-grid td { padding: 3px 6px; }
+    table.day-grid tr.first-last-day { background: var(--highlight) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table.day-grid tr.transition-day { background: #e3f2fd !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table.day-grid tr.extended-stay { background: #e8f5e9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table.day-grid .seg-divider td { background: var(--cmu-red) !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table.day-grid .meal-cell .deducted { text-decoration: line-through; color: #999; }
+    input[type="checkbox"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .summary-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .summary-box { border: 1px solid var(--border); background: var(--cmu-light) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bulk-select { display: none; }
+    .policy-ref { display: block !important; font-size: 9px; color: var(--cmu-gray); margin-top: 10px; border-top: 1px solid var(--border); padding-top: 6px; }
+  }
+
+  @media (max-width: 768px) {
+    .form-row { flex-direction: column; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div>
+      <h1>Per Diem Meal & Incidentals Calculator</h1>
+      <div class="subtitle">Carnegie Mellon University — Business Travel Expense</div>
+    </div>
+    <button class="btn-print no-print" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:12px 16px;margin-bottom:20px;font-size:0.85rem;color:#664d03;">
+    <strong>Per Diem Eligibility:</strong> This tool calculates per diem meal &amp; incidentals for <strong>CMU employees on overnight business travel</strong> only.
+    Non-employees must use actual receipts. Per diem and actual cost cannot be mixed on the same trip.
+    Refer to the <a href="https://www.cmu.edu/policies/financial-management/business-travel-expense.html" target="_blank" style="color:#664d03;text-decoration:underline;">CMU Business Travel Expense Policy</a> for full details.
+  </div>
+
+  <!-- Traveler Info -->
+  <div class="card">
+    <h2>Trip Details</h2>
+    <div class="form-row">
+      <div class="form-group" style="flex:1;">
+        <label>Traveler Name</label>
+        <input type="text" id="travelerName" placeholder="Full name">
+      </div>
+      <div class="form-group" style="flex:1;">
+        <label>Department</label>
+        <input type="text" id="department" placeholder="Department or unit">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group" style="flex:1;">
+        <label>Trip Purpose</label>
+        <input type="text" id="tripPurpose" placeholder="e.g., Conference attendance, research collaboration">
+      </div>
+    </div>
+    <div class="lodging-row">
+      <label>Lodging</label>
+      <div class="toggle-group">
+        <button id="btnLodgingDirect" class="active" onclick="setLodging('direct')">Paid Directly (e.g., by university)</button>
+        <button id="btnLodgingPerDiem" onclick="setLodging('perdiem')">Per Diem Lodging Rate</button>
+      </div>
+    </div>
+    <div id="lodgingNote" class="status info" style="display:block;">Lodging is paid directly — only M&IE (meals and incidentals) will be calculated below.</div>
+  </div>
+
+  <!-- Trip Segments -->
+  <div class="card">
+    <h2>Trip Segments</h2>
+    <p style="font-size:0.85rem;color:var(--cmu-gray);margin-bottom:14px;">Add one segment per destination. For multi-city trips, add additional segments below.</p>
+
+    <div id="segmentsContainer"></div>
+
+    <button class="btn btn-outline btn-sm no-print" onclick="addSegment()" style="margin-top:4px;">+ Add Another Destination</button>
+
+    <div id="globalStatus" class="status" style="margin-top:12px;"></div>
+
+    <div style="margin-top:16px;">
+      <button class="btn btn-primary no-print" onclick="generateGrid()">Generate Daily Grid</button>
+    </div>
+  </div>
+
+  <!-- Bulk Meal Selection + Daily Grid -->
+  <div class="card hidden" id="bulkSelectCard">
+    <h2>Daily Per Diem Breakdown <span style="font-weight:400;font-size:0.85rem;color:var(--cmu-gray);">— Check meals to deduct (provided by conference or not available due to travel)</span></h2>
+    <div class="bulk-select no-print">
+      <div class="form-row" style="align-items:end;margin-bottom:0;">
+        <div class="form-group">
+          <label>From Date</label>
+          <input type="date" id="bulkStart">
+        </div>
+        <div class="form-group">
+          <label>To Date</label>
+          <input type="date" id="bulkEnd">
+        </div>
+        <div class="form-group">
+          <label>Meals to Deduct</label>
+          <div style="display:flex;gap:12px;padding:6px 0;">
+            <label style="font-size:0.85rem;text-transform:none;font-weight:normal;display:flex;align-items:center;gap:4px;">
+              <input type="checkbox" id="bulkBreakfast"> Breakfast
+            </label>
+            <label style="font-size:0.85rem;text-transform:none;font-weight:normal;display:flex;align-items:center;gap:4px;">
+              <input type="checkbox" id="bulkLunch"> Lunch
+            </label>
+            <label style="font-size:0.85rem;text-transform:none;font-weight:normal;display:flex;align-items:center;gap:4px;">
+              <input type="checkbox" id="bulkDinner"> Dinner
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-secondary btn-sm" onclick="applyBulkSelection()">Apply</button>
+          <button class="btn btn-outline btn-sm" style="margin-left:4px;" onclick="clearAllMeals()">Clear All</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-wrapper" style="margin-top:14px;">
+      <table class="day-grid" id="dayGrid">
+        <thead id="dayGridHead"></thead>
+        <tbody id="dayGridBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="card hidden" id="summaryCard">
+    <h2>Reimbursement Summary</h2>
+    <div class="summary-grid" id="summaryGrid"></div>
+    <div style="font-size:0.8rem;color:var(--cmu-gray);">
+      <p><strong>Legend:</strong>
+        <span style="background:var(--highlight);padding:2px 6px;border-radius:3px;">Yellow</span> = First/last travel day (75% rate) &nbsp;
+        <span style="background:#e3f2fd;padding:2px 6px;border-radius:3px;">Blue</span> = Transition day between cities (use checkboxes to deduct meals not available) &nbsp;
+        <span style="background:#e8f5e9;padding:2px 6px;border-radius:3px;">Green</span> = Extended stay (60% rate)
+      </p>
+      <p style="margin-top:6px;">Incidentals are always reimbursed in full. Use the "Deduct" checkboxes to remove meals that were provided (conference, group meals) or not available due to travel timing.</p>
+    </div>
+  </div>
+
+  <div class="policy-ref" style="display:none;">
+    Per CMU Policy on Business Travel Expenses (cmu.edu/policies/financial-management/business-travel-expense.html).
+    Per diem rates from U.S. GSA (gsa.gov) for domestic travel and U.S. Dept. of State for international travel.
+    First/last travel day reimbursed at 75%. Extended stays (&gt;30 days) reimbursed at 60%.
+    Generated on <span id="printDate"></span>.
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// Constants & State
+// ============================================================
+let lodgingMode = 'direct'; // 'direct' or 'perdiem'
+let segments = [];
+let days = [];
+let segmentCounter = 0;
+
+// Standard CONUS rate applies to cities not specifically listed
+const STANDARD_RATE = {m: 68, l: 110};
+
+// FY2026 CONUS M&IE Breakdown (GSA published tiers)
+// Source: gsa.gov/travel/plan-book/per-diem-rates/mie-breakdown
+const mieBreakdownTable = {
+  68: {breakfast:16, lunch:19, dinner:28, incidentals:5},
+  74: {breakfast:18, lunch:20, dinner:31, incidentals:5},
+  80: {breakfast:20, lunch:22, dinner:33, incidentals:5},
+  86: {breakfast:22, lunch:23, dinner:36, incidentals:5},
+  92: {breakfast:23, lunch:26, dinner:38, incidentals:5}
+};
+
+const US_STATES = [
+  ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+  ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
+  ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],
+  ['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],
+  ['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],
+  ['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],
+  ['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],
+  ['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],
+  ['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],
+  ['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],
+  ['DC','District of Columbia']
+];
+
+const internationalRates = [
+  {c:"Australia",p:"Canberra",m:131,l:222},{c:"Australia",p:"Melbourne",m:131,l:256},{c:"Australia",p:"Sydney",m:131,l:227},
+  {c:"Austria",p:"Vienna",m:112,l:240},
+  {c:"Belgium",p:"Brussels",m:109,l:233},
+  {c:"Brazil",p:"Brasilia",m:78,l:183},{c:"Brazil",p:"Rio de Janeiro",m:97,l:254},{c:"Brazil",p:"Sao Paulo",m:97,l:219},
+  {c:"Canada",p:"Montreal",m:96,l:207},{c:"Canada",p:"Ottawa",m:96,l:195},{c:"Canada",p:"Toronto",m:96,l:236},{c:"Canada",p:"Vancouver",m:96,l:213},
+  {c:"Chile",p:"Santiago",m:82,l:177},
+  {c:"China",p:"Beijing",m:102,l:222},{c:"China",p:"Shanghai",m:102,l:240},
+  {c:"Colombia",p:"Bogota",m:72,l:163},
+  {c:"Costa Rica",p:"San Jose",m:76,l:161},
+  {c:"Czech Republic",p:"Prague",m:101,l:199},
+  {c:"Denmark",p:"Copenhagen",m:138,l:264},
+  {c:"Egypt",p:"Cairo",m:66,l:213},
+  {c:"Finland",p:"Helsinki",m:114,l:230},
+  {c:"France",p:"Lyon",m:107,l:196},{c:"France",p:"Paris",m:119,l:358},
+  {c:"Germany",p:"Berlin",m:107,l:214},{c:"Germany",p:"Frankfurt",m:107,l:239},{c:"Germany",p:"Munich",m:107,l:260},
+  {c:"Greece",p:"Athens",m:92,l:174},
+  {c:"Hong Kong",p:"Hong Kong",m:138,l:310},
+  {c:"Hungary",p:"Budapest",m:92,l:178},
+  {c:"Iceland",p:"Reykjavik",m:128,l:260},
+  {c:"India",p:"Mumbai",m:68,l:253},{c:"India",p:"New Delhi",m:68,l:237},
+  {c:"Indonesia",p:"Jakarta",m:72,l:195},
+  {c:"Ireland",p:"Dublin",m:117,l:246},
+  {c:"Israel",p:"Jerusalem",m:122,l:278},{c:"Israel",p:"Tel Aviv",m:122,l:305},
+  {c:"Italy",p:"Florence",m:109,l:230},{c:"Italy",p:"Milan",m:109,l:248},{c:"Italy",p:"Rome",m:109,l:272},
+  {c:"Japan",p:"Osaka",m:144,l:202},{c:"Japan",p:"Tokyo",m:177,l:282},
+  {c:"Jordan",p:"Amman",m:82,l:202},
+  {c:"Kenya",p:"Nairobi",m:74,l:230},
+  {c:"Malaysia",p:"Kuala Lumpur",m:62,l:156},
+  {c:"Mexico",p:"Mexico City",m:76,l:194},
+  {c:"Morocco",p:"Rabat",m:68,l:155},
+  {c:"Netherlands",p:"Amsterdam",m:109,l:293},{c:"Netherlands",p:"The Hague",m:109,l:238},
+  {c:"New Zealand",p:"Auckland",m:100,l:174},{c:"New Zealand",p:"Wellington",m:100,l:169},
+  {c:"Nigeria",p:"Lagos",m:82,l:257},
+  {c:"Norway",p:"Oslo",m:130,l:234},
+  {c:"Peru",p:"Lima",m:78,l:178},
+  {c:"Philippines",p:"Manila",m:67,l:175},
+  {c:"Poland",p:"Warsaw",m:77,l:187},
+  {c:"Portugal",p:"Lisbon",m:92,l:199},
+  {c:"Qatar",p:"Doha",m:93,l:278},
+  {c:"Rwanda",p:"Kigali",m:64,l:199},
+  {c:"Saudi Arabia",p:"Riyadh",m:88,l:289},
+  {c:"Singapore",p:"Singapore",m:114,l:291},
+  {c:"South Africa",p:"Cape Town",m:62,l:160},{c:"South Africa",p:"Johannesburg",m:62,l:149},
+  {c:"South Korea",p:"Seoul",m:115,l:258},
+  {c:"Spain",p:"Barcelona",m:105,l:222},{c:"Spain",p:"Madrid",m:105,l:210},
+  {c:"Sweden",p:"Stockholm",m:122,l:275},
+  {c:"Switzerland",p:"Bern",m:131,l:258},{c:"Switzerland",p:"Geneva",m:131,l:326},{c:"Switzerland",p:"Zurich",m:131,l:289},
+  {c:"Taiwan",p:"Taipei",m:88,l:184},
+  {c:"Thailand",p:"Bangkok",m:79,l:184},
+  {c:"Turkey",p:"Ankara",m:60,l:159},{c:"Turkey",p:"Istanbul",m:68,l:196},
+  {c:"Ukraine",p:"Kyiv",m:65,l:165},
+  {c:"United Arab Emirates",p:"Abu Dhabi",m:102,l:283},{c:"United Arab Emirates",p:"Dubai",m:102,l:310},
+  {c:"United Kingdom",p:"Edinburgh",m:117,l:248},{c:"United Kingdom",p:"London",m:136,l:448},{c:"United Kingdom",p:"Manchester",m:107,l:199},
+  {c:"Vietnam",p:"Hanoi",m:67,l:171},{c:"Vietnam",p:"Ho Chi Minh City",m:67,l:183}
+];
+
+// FY2026 GSA Per Diem Rates — 296 locations across 48 states + DC
+// Source: gsa.gov/system/files/FY2026_PerDiemMasterRatesFile.xlsx
+// Update annually when new FY rates published (typically mid-August, effective Oct 1)
+const domesticRates = [
+  {s:"AL",c:"Birmingham",m:80,l:126},{s:"AL",c:"Gulf Shores",m:74,l:216},{s:"AL",c:"Huntsville",m:74,l:141},{s:"AL",c:"Mobile",m:74,l:114},
+  {s:"AR",c:"Hot Springs",m:68,l:114},
+  {s:"AZ",c:"Grand Canyon / Flagstaff",m:80,l:144},{s:"AZ",c:"Kayenta",m:74,l:145},{s:"AZ",c:"Phoenix / Scottsdale",m:86,l:229},{s:"AZ",c:"Sedona",m:92,l:274},{s:"AZ",c:"Tucson",m:80,l:171},
+  {s:"CA",c:"Antioch / Brentwood / Concord",m:86,l:147},{s:"CA",c:"Bakersfield / Ridgecrest",m:74,l:132},{s:"CA",c:"Barstow / Ontario / Victorville",m:86,l:124},{s:"CA",c:"Death Valley",m:80,l:142},{s:"CA",c:"Eureka / Arcata / McKinleyville",m:86,l:172},{s:"CA",c:"Fresno",m:86,l:129},{s:"CA",c:"Los Angeles",m:86,l:191},{s:"CA",c:"Mammoth Lakes",m:86,l:195},{s:"CA",c:"Mill Valley / San Rafael / Novato",m:92,l:175},{s:"CA",c:"Monterey",m:92,l:279},{s:"CA",c:"Napa",m:92,l:246},{s:"CA",c:"Oakhurst",m:80,l:135},{s:"CA",c:"Oakland",m:92,l:145},{s:"CA",c:"Palm Springs",m:86,l:186},{s:"CA",c:"Point Arena / Gualala",m:86,l:129},{s:"CA",c:"Sacramento",m:86,l:150},{s:"CA",c:"San Diego",m:86,l:237},{s:"CA",c:"San Francisco",m:92,l:272},{s:"CA",c:"San Luis Obispo",m:86,l:203},{s:"CA",c:"San Mateo / Foster City / Belmont",m:86,l:183},{s:"CA",c:"Santa Barbara",m:92,l:262},{s:"CA",c:"Santa Cruz",m:86,l:176},{s:"CA",c:"Santa Monica",m:92,l:273},{s:"CA",c:"Santa Rosa",m:86,l:157},{s:"CA",c:"South Lake Tahoe",m:86,l:247},{s:"CA",c:"Stockton",m:74,l:132},{s:"CA",c:"Sunnyvale / Palo Alto / San Jose",m:92,l:192},{s:"CA",c:"Tahoe City",m:86,l:131},{s:"CA",c:"Truckee",m:86,l:173},{s:"CA",c:"Visalia",m:80,l:131},{s:"CA",c:"West Sacramento / Davis",m:80,l:142},{s:"CA",c:"Yosemite National Park",m:86,l:203},
+  {s:"CO",c:"Aspen",m:92,l:407},{s:"CO",c:"Boulder / Broomfield",m:80,l:173},{s:"CO",c:"Colorado Springs",m:86,l:168},{s:"CO",c:"Cortez",m:74,l:133},{s:"CO",c:"Crested Butte / Gunnison",m:86,l:154},{s:"CO",c:"Denver / Aurora",m:92,l:215},{s:"CO",c:"Douglas",m:80,l:142},{s:"CO",c:"Durango",m:80,l:184},{s:"CO",c:"Fort Collins / Loveland",m:80,l:140},{s:"CO",c:"Grand Lake",m:86,l:173},{s:"CO",c:"Montrose",m:74,l:185},{s:"CO",c:"Silverthorne / Breckenridge",m:92,l:282},{s:"CO",c:"Steamboat Springs",m:92,l:288},{s:"CO",c:"Telluride",m:92,l:350},{s:"CO",c:"Vail",m:92,l:397},
+  {s:"CT",c:"Bridgeport / Danbury",m:86,l:146},{s:"CT",c:"Hartford",m:80,l:138},{s:"CT",c:"New Haven",m:80,l:130},{s:"CT",c:"New London / Groton",m:86,l:124},
+  {s:"DC",c:"District of Columbia",m:92,l:276},
+  {s:"DE",c:"Lewes",m:74,l:221},{s:"DE",c:"Wilmington",m:74,l:127},
+  {s:"FL",c:"Boca Raton / Delray Beach / Jupiter",m:86,l:244},{s:"FL",c:"Bradenton",m:80,l:225},{s:"FL",c:"Cocoa Beach",m:74,l:208},{s:"FL",c:"Daytona Beach",m:80,l:157},{s:"FL",c:"Fort Lauderdale",m:86,l:224},{s:"FL",c:"Fort Myers",m:80,l:216},{s:"FL",c:"Fort Walton Beach / De Funiak Springs",m:86,l:260},{s:"FL",c:"Gulf Breeze",m:74,l:214},{s:"FL",c:"Key West",m:86,l:436},{s:"FL",c:"Miami",m:92,l:232},{s:"FL",c:"Naples",m:80,l:314},{s:"FL",c:"Orlando",m:80,l:169},{s:"FL",c:"Panama City",m:80,l:194},{s:"FL",c:"Pensacola",m:74,l:190},{s:"FL",c:"Punta Gorda",m:74,l:192},{s:"FL",c:"Sarasota",m:86,l:205},{s:"FL",c:"Sebring",m:74,l:219},{s:"FL",c:"St. Augustine",m:80,l:170},{s:"FL",c:"Stuart",m:80,l:214},{s:"FL",c:"Tallahassee",m:80,l:138},{s:"FL",c:"Tampa / St. Petersburg",m:80,l:200},{s:"FL",c:"Vero Beach",m:74,l:259},
+  {s:"GA",c:"Athens",m:74,l:136},{s:"GA",c:"Atlanta",m:86,l:197},{s:"GA",c:"Augusta",m:74,l:125},{s:"GA",c:"Jekyll Island / Brunswick",m:86,l:223},{s:"GA",c:"Marietta",m:74,l:126},{s:"GA",c:"Savannah",m:80,l:176},
+  {s:"IA",c:"Dallas",m:80,l:115},{s:"IA",c:"Des Moines",m:80,l:121},
+  {s:"ID",c:"Boise",m:86,l:191},{s:"ID",c:"Coeur d'Alene",m:74,l:217},{s:"ID",c:"Sun Valley / Ketchum",m:80,l:300},
+  {s:"IL",c:"Bolingbrook / Romeoville / Lemont",m:74,l:114},{s:"IL",c:"Chicago",m:92,l:234},{s:"IL",c:"East St. Louis / O'Fallon / Fairview Heights",m:86,l:150},{s:"IL",c:"Oak Brook Terrace",m:80,l:115},
+  {s:"IN",c:"Bloomington",m:74,l:139},{s:"IN",c:"Indianapolis / Carmel",m:80,l:133},{s:"IN",c:"Lafayette / West Lafayette",m:74,l:143},
+  {s:"KS",c:"Kansas City / Overland Park",m:80,l:135},
+  {s:"KY",c:"Boone",m:68,l:116},{s:"KY",c:"Kenton",m:86,l:163},{s:"KY",c:"Lexington",m:80,l:118},{s:"KY",c:"Louisville",m:80,l:164},
+  {s:"LA",c:"Alexandria / Leesville / Natchitoches",m:68,l:112},{s:"LA",c:"New Orleans",m:80,l:179},
+  {s:"MA",c:"Andover",m:80,l:137},{s:"MA",c:"Boston / Cambridge",m:92,l:349},{s:"MA",c:"Burlington / Woburn",m:86,l:178},{s:"MA",c:"Falmouth",m:86,l:253},{s:"MA",c:"Hyannis",m:92,l:209},{s:"MA",c:"Martha's Vineyard",m:92,l:462},{s:"MA",c:"Nantucket",m:92,l:471},{s:"MA",c:"Northampton",m:80,l:157},{s:"MA",c:"Pittsfield",m:86,l:178},{s:"MA",c:"Plymouth / Taunton / New Bedford",m:80,l:126},{s:"MA",c:"Quincy",m:80,l:175},{s:"MA",c:"Springfield",m:74,l:128},{s:"MA",c:"Worcester",m:80,l:135},
+  {s:"MD",c:"Aberdeen / Bel Air / Belcamp",m:74,l:113},{s:"MD",c:"Annapolis",m:80,l:161},{s:"MD",c:"Baltimore City",m:86,l:150},{s:"MD",c:"Cambridge / St. Michaels",m:80,l:186},{s:"MD",c:"Centreville",m:74,l:154},{s:"MD",c:"Columbia",m:86,l:113},{s:"MD",c:"Ocean City",m:80,l:295},
+  {s:"ME",c:"Bar Harbor / Rockport",m:92,l:304},{s:"ME",c:"Kennebunk / Kittery / Sanford",m:86,l:201},{s:"ME",c:"Portland",m:80,l:211},
+  {s:"MI",c:"Ann Arbor",m:80,l:146},{s:"MI",c:"Detroit",m:74,l:152},{s:"MI",c:"Grand Rapids",m:80,l:119},{s:"MI",c:"Holland",m:74,l:157},{s:"MI",c:"Mackinac Island",m:86,l:195},{s:"MI",c:"Midland",m:74,l:120},{s:"MI",c:"Muskegon",m:68,l:149},{s:"MI",c:"Petoskey",m:86,l:220},{s:"MI",c:"Pontiac / Auburn Hills",m:80,l:116},{s:"MI",c:"South Haven",m:68,l:142},{s:"MI",c:"Traverse City",m:80,l:235},
+  {s:"MN",c:"Duluth",m:86,l:220},{s:"MN",c:"Minneapolis / St. Paul",m:92,l:148},{s:"MN",c:"Rochester",m:80,l:127},
+  {s:"MO",c:"Kansas City",m:80,l:135},{s:"MO",c:"St. Louis",m:86,l:150},
+  {s:"MS",c:"Oxford",m:68,l:127},{s:"MS",c:"Southaven",m:68,l:126},{s:"MS",c:"Starkville",m:68,l:125},
+  {s:"MT",c:"Big Sky / West Yellowstone/Gardiner",m:80,l:310},{s:"MT",c:"Helena",m:74,l:132},{s:"MT",c:"Kalispell/Whitefish",m:80,l:232},{s:"MT",c:"Missoula",m:74,l:195},
+  {s:"NC",c:"Asheville",m:80,l:141},{s:"NC",c:"Atlantic Beach / Morehead City",m:74,l:178},{s:"NC",c:"Chapel Hill",m:80,l:140},{s:"NC",c:"Charlotte",m:80,l:131},{s:"NC",c:"Durham",m:74,l:121},{s:"NC",c:"Fayetteville",m:68,l:124},{s:"NC",c:"Greensboro",m:74,l:123},{s:"NC",c:"Kill Devil Hills",m:74,l:254},{s:"NC",c:"Raleigh",m:74,l:131},{s:"NC",c:"Wilmington",m:74,l:147},
+  {s:"NE",c:"Omaha",m:80,l:122},
+  {s:"NH",c:"Concord",m:74,l:124},{s:"NH",c:"Conway",m:80,l:161},{s:"NH",c:"Durham",m:74,l:152},{s:"NH",c:"Laconia",m:74,l:182},{s:"NH",c:"Lebanon / Lincoln / West Lebanon",m:74,l:177},{s:"NH",c:"Manchester",m:74,l:130},{s:"NH",c:"Portsmouth",m:74,l:192},
+  {s:"NJ",c:"Cherry Hill / Moorestown",m:80,l:112},{s:"NJ",c:"Eatontown / Freehold",m:86,l:146},{s:"NJ",c:"Edison / Piscataway",m:80,l:122},{s:"NJ",c:"Flemington",m:80,l:124},{s:"NJ",c:"Newark",m:86,l:156},{s:"NJ",c:"Parsippany",m:80,l:143},{s:"NJ",c:"Princeton / Trenton",m:86,l:138},{s:"NJ",c:"Somerset",m:80,l:138},{s:"NJ",c:"Springfield / Cranford / New Providence",m:80,l:139},{s:"NJ",c:"Toms River",m:74,l:213},
+  {s:"NM",c:"Albuquerque",m:80,l:144},{s:"NM",c:"Carlsbad",m:74,l:155},{s:"NM",c:"Santa Fe",m:80,l:167},{s:"NM",c:"Taos",m:74,l:128},
+  {s:"NV",c:"Incline Village / Reno / Sparks",m:80,l:184},{s:"NV",c:"Las Vegas",m:86,l:159},
+  {s:"NY",c:"Albany",m:86,l:117},{s:"NY",c:"Binghamton",m:74,l:117},{s:"NY",c:"Buffalo",m:80,l:139},{s:"NY",c:"Floral Park / Garden City / Great Neck",m:86,l:164},{s:"NY",c:"Glens Falls",m:86,l:186},{s:"NY",c:"Ithaca",m:80,l:144},{s:"NY",c:"Kingston",m:86,l:139},{s:"NY",c:"Lake Placid",m:86,l:238},{s:"NY",c:"New York City",m:92,l:342},{s:"NY",c:"Niagara Falls",m:80,l:142},{s:"NY",c:"Nyack / Palisades",m:80,l:129},{s:"NY",c:"Poughkeepsie",m:80,l:115},{s:"NY",c:"Riverhead / Ronkonkoma / Melville",m:86,l:155},{s:"NY",c:"Rochester",m:80,l:132},{s:"NY",c:"Saratoga Springs / Schenectady",m:80,l:214},{s:"NY",c:"Syracuse / Oswego",m:80,l:122},{s:"NY",c:"Tarrytown / White Plains / New Rochelle",m:92,l:161},{s:"NY",c:"Troy",m:80,l:121},{s:"NY",c:"West Point",m:80,l:123},
+  {s:"OH",c:"Cincinnati",m:86,l:163},{s:"OH",c:"Cleveland",m:80,l:159},{s:"OH",c:"Columbus",m:80,l:131},{s:"OH",c:"Dayton / Fairborn",m:74,l:115},{s:"OH",c:"Hamilton",m:74,l:124},{s:"OH",c:"Sandusky",m:68,l:144},
+  {s:"OK",c:"Oklahoma City",m:80,l:116},
+  {s:"OR",c:"Beaverton",m:80,l:132},{s:"OR",c:"Bend",m:86,l:192},{s:"OR",c:"Clackamas",m:80,l:136},{s:"OR",c:"Eugene / Florence",m:80,l:192},{s:"OR",c:"Lincoln City",m:92,l:167},{s:"OR",c:"Portland",m:86,l:155},{s:"OR",c:"Seaside",m:86,l:236},
+  {s:"PA",c:"Allentown / Easton / Bethlehem",m:74,l:115},{s:"PA",c:"Bucks",m:80,l:119},{s:"PA",c:"Chester / Radnor / Essington",m:80,l:127},{s:"PA",c:"Gettysburg",m:68,l:122},{s:"PA",c:"Harrisburg",m:74,l:124},{s:"PA",c:"Hershey",m:80,l:196},{s:"PA",c:"Lancaster",m:74,l:123},{s:"PA",c:"Malvern / Frazer / Berwyn",m:80,l:118},{s:"PA",c:"Montgomery",m:80,l:126},{s:"PA",c:"Philadelphia",m:92,l:218},{s:"PA",c:"Pittsburgh",m:80,l:138},{s:"PA",c:"Reading",m:74,l:117},{s:"PA",c:"State College",m:74,l:124},
+  {s:"RI",c:"Jamestown / Middletown / Newport",m:80,l:268},{s:"RI",c:"Providence / Bristol",m:80,l:154},
+  {s:"SC",c:"Charleston",m:92,l:288},{s:"SC",c:"Columbia",m:74,l:115},{s:"SC",c:"Hilton Head",m:80,l:215},{s:"SC",c:"Myrtle Beach",m:74,l:182},
+  {s:"SD",c:"Deadwood / Spearfish",m:80,l:140},{s:"SD",c:"Hot Springs",m:74,l:161},{s:"SD",c:"Rapid City",m:74,l:158},
+  {s:"TN",c:"Brentwood / Franklin",m:86,l:130},{s:"TN",c:"Chattanooga",m:74,l:117},{s:"TN",c:"Knoxville",m:74,l:119},{s:"TN",c:"Memphis",m:74,l:129},{s:"TN",c:"Nashville",m:86,l:248},
+  {s:"TX",c:"Arlington / Fort Worth / Grapevine",m:80,l:181},{s:"TX",c:"Austin",m:80,l:187},{s:"TX",c:"Big Spring",m:68,l:114},{s:"TX",c:"Dallas",m:80,l:191},{s:"TX",c:"Galveston",m:74,l:146},{s:"TX",c:"Houston",m:80,l:128},{s:"TX",c:"Midland / Odessa",m:74,l:132},{s:"TX",c:"Pecos",m:74,l:121},{s:"TX",c:"Plano",m:80,l:123},{s:"TX",c:"San Antonio",m:74,l:161},{s:"TX",c:"South Padre Island",m:74,l:140},
+  {s:"UT",c:"Moab",m:86,l:221},{s:"UT",c:"Park City",m:92,l:483},{s:"UT",c:"Provo",m:74,l:117},{s:"UT",c:"Salt Lake City",m:80,l:142},
+  {s:"VA",c:"Blacksburg",m:68,l:122},{s:"VA",c:"Charlottesville",m:80,l:136},{s:"VA",c:"Loudoun",m:80,l:115},{s:"VA",c:"Lynchburg",m:68,l:115},{s:"VA",c:"Richmond",m:80,l:157},{s:"VA",c:"Roanoke",m:74,l:119},{s:"VA",c:"Virginia Beach",m:74,l:210},{s:"VA",c:"Wallops Island",m:68,l:248},{s:"VA",c:"Williamsburg / York",m:80,l:134},
+  {s:"VT",c:"Burlington",m:86,l:202},{s:"VT",c:"Manchester",m:86,l:220},{s:"VT",c:"Montpelier",m:74,l:227},{s:"VT",c:"Stowe",m:86,l:185},{s:"VT",c:"White River Junction",m:86,l:144},
+  {s:"WA",c:"Everett / Lynnwood",m:86,l:140},{s:"WA",c:"Ocean Shores",m:86,l:132},{s:"WA",c:"Olympia / Tumwater",m:80,l:175},{s:"WA",c:"Port Angeles / Port Townsend",m:92,l:235},{s:"WA",c:"Richland / Pasco",m:86,l:130},{s:"WA",c:"Seattle",m:92,l:248},{s:"WA",c:"Spokane",m:86,l:126},{s:"WA",c:"Tacoma",m:86,l:136},{s:"WA",c:"Vancouver",m:86,l:155},
+  {s:"WI",c:"Madison",m:80,l:138},{s:"WI",c:"Milwaukee",m:80,l:140},{s:"WI",c:"Sturgeon Bay",m:80,l:133},
+  {s:"WV",c:"Charles Town",m:68,l:122},{s:"WV",c:"Charleston",m:68,l:115},
+  {s:"WY",c:"Cody",m:74,l:190},{s:"WY",c:"Jackson / Pinedale",m:92,l:420}
+];
+
+// ============================================================
+// Initialization
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('printDate').textContent = new Date().toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+  addSegment(); // start with one segment
+});
+
+// ============================================================
+// Lodging Toggle
+// ============================================================
+function setLodging(mode) {
+  lodgingMode = mode;
+  document.getElementById('btnLodgingDirect').classList.toggle('active', mode === 'direct');
+  document.getElementById('btnLodgingPerDiem').classList.toggle('active', mode === 'perdiem');
+  const note = document.getElementById('lodgingNote');
+  if (mode === 'direct') {
+    note.textContent = 'Lodging is paid directly — only M&IE (meals and incidentals) will be calculated below.';
+    note.className = 'status info';
+    note.style.display = 'block';
+  } else {
+    note.textContent = 'Lodging per diem rate will be included in the daily breakdown.';
+    note.className = 'status info';
+    note.style.display = 'block';
+  }
+  // Re-render if grid already generated
+  if (days.length > 0) {
+    renderGrid();
+    recalculate();
+  }
+}
+
+// ============================================================
+// Segment Management
+// ============================================================
+function addSegment() {
+  const id = segmentCounter++;
+  const seg = { id, type: 'domestic', destination: '', mie: 0, lodging: 0, breakdown: null, startDate: '', endDate: '', cityCache: null };
+  segments.push(seg);
+  renderSegment(seg);
+}
+
+function removeSegment(id) {
+  if (segments.length <= 1) return;
+  segments = segments.filter(s => s.id !== id);
+  document.getElementById(`seg_${id}`).remove();
+}
+
+function renderSegment(seg) {
+  const div = document.createElement('div');
+  div.className = 'segment';
+  div.id = `seg_${seg.id}`;
+
+  const stateOptions = US_STATES.map(([code, name]) => `<option value="${code}">${code} — ${name}</option>`).join('');
+  const countryOptions = [...new Set(internationalRates.map(r => r.c))].sort().map(c => `<option value="${c}">${c}</option>`).join('');
+
+  div.innerHTML = `
+    <div class="segment-header">
+      <h3>Segment ${segments.length}</h3>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="toggle-group no-print">
+          <button class="active" id="seg_${seg.id}_btnDom" onclick="setSegType(${seg.id},'domestic')">Domestic</button>
+          <button id="seg_${seg.id}_btnIntl" onclick="setSegType(${seg.id},'international')">International</button>
+        </div>
+        ${segments.length > 1 ? `<button class="btn btn-danger btn-sm no-print" onclick="removeSegment(${seg.id})">Remove</button>` : ''}
+      </div>
+    </div>
+
+    <div id="seg_${seg.id}_domFields" class="form-row">
+      <div class="form-group">
+        <label>State</label>
+        <select id="seg_${seg.id}_state" onchange="onStateChange(${seg.id})">
+          <option value="">Select state...</option>
+          ${stateOptions}
+        </select>
+      </div>
+      <div class="form-group" style="min-width:200px;">
+        <label>City</label>
+        <select id="seg_${seg.id}_city" onchange="onDomCityChange(${seg.id})">
+          <option value="">Select state first...</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="seg_${seg.id}_intlFields" class="form-row hidden">
+      <div class="form-group">
+        <label>Country</label>
+        <select id="seg_${seg.id}_country" onchange="onCountryChange(${seg.id})">
+          <option value="">Select country...</option>
+          ${countryOptions}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>City / Post</label>
+        <select id="seg_${seg.id}_post" onchange="onIntlPostChange(${seg.id})">
+          <option value="">Select country first...</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Start Date</label>
+        <input type="date" id="seg_${seg.id}_start">
+      </div>
+      <div class="form-group">
+        <label>End Date</label>
+        <input type="date" id="seg_${seg.id}_end">
+      </div>
+    </div>
+
+    <div id="seg_${seg.id}_rateInfo" class="segment-rate"></div>
+    <div id="seg_${seg.id}_status" class="status"></div>
+  `;
+
+  document.getElementById('segmentsContainer').appendChild(div);
+}
+
+function setSegType(id, type) {
+  const seg = segments.find(s => s.id === id);
+  if (!seg) return;
+  seg.type = type;
+  seg.destination = '';
+  seg.mie = 0;
+  seg.lodging = 0;
+  seg.breakdown = null;
+  document.getElementById(`seg_${id}_btnDom`).classList.toggle('active', type === 'domestic');
+  document.getElementById(`seg_${id}_btnIntl`).classList.toggle('active', type === 'international');
+  document.getElementById(`seg_${id}_domFields`).classList.toggle('hidden', type !== 'domestic');
+  document.getElementById(`seg_${id}_intlFields`).classList.toggle('hidden', type !== 'international');
+  const info = document.getElementById(`seg_${id}_rateInfo`);
+  info.classList.remove('visible');
+  showStatus(`seg_${id}_status`, '', '');
+}
+
+// ============================================================
+// Domestic: State → City dropdown (from embedded data)
+// ============================================================
+function onStateChange(id) {
+  const seg = segments.find(s => s.id === id);
+  if (!seg) return;
+  const state = document.getElementById(`seg_${id}_state`).value;
+  const citySel = document.getElementById(`seg_${id}_city`);
+  seg.destination = '';
+  seg.mie = 0;
+  seg.lodging = 0;
+  seg.breakdown = null;
+  document.getElementById(`seg_${id}_rateInfo`).classList.remove('visible');
+
+  if (!state) {
+    citySel.innerHTML = '<option value="">Select state first...</option>';
+    return;
+  }
+
+  // Filter embedded rates for this state, add standard rate option
+  const stateCities = domesticRates.filter(r => r.s === state).sort((a, b) => a.c.localeCompare(b.c));
+
+  citySel.innerHTML = '<option value="">Select city...</option>';
+  // Always include the standard CONUS rate as first option
+  const stdOpt = document.createElement('option');
+  stdOpt.value = '__STANDARD__';
+  stdOpt.textContent = `All other ${US_STATES.find(s=>s[0]===state)?.[1]||state} locations ($${STANDARD_RATE.m} M&IE)`;
+  citySel.appendChild(stdOpt);
+
+  stateCities.forEach(r => {
+    const opt = document.createElement('option');
+    opt.value = r.c;
+    opt.textContent = `${r.c} ($${r.m} M&IE)`;
+    citySel.appendChild(opt);
+  });
+
+  seg.cityCache = stateCities;
+}
+
+function onDomCityChange(id) {
+  const seg = segments.find(s => s.id === id);
+  if (!seg) return;
+  const cityName = document.getElementById(`seg_${id}_city`).value;
+  const state = document.getElementById(`seg_${id}_state`).value;
+  if (!cityName) return;
+
+  let mie, lodging, dest;
+  if (cityName === '__STANDARD__') {
+    mie = STANDARD_RATE.m;
+    lodging = STANDARD_RATE.l;
+    const stateName = US_STATES.find(s => s[0] === state)?.[1] || state;
+    dest = `${stateName} (standard rate), ${state}`;
+  } else {
+    const cityData = (seg.cityCache || []).find(c => c.c === cityName);
+    if (!cityData) return;
+    mie = cityData.m;
+    lodging = cityData.l;
+    dest = `${cityName}, ${state}`;
+  }
+
+  seg.mie = mie;
+  seg.lodging = lodging;
+  seg.destination = dest;
+
+  // Resolve MIE breakdown from embedded table
+  seg.breakdown = mieBreakdownTable[mie];
+  if (!seg.breakdown) {
+    const keys = Object.keys(mieBreakdownTable).map(Number).sort((a, b) => a - b);
+    const closest = keys.reduce((prev, curr) => Math.abs(curr - mie) < Math.abs(prev - mie) ? curr : prev);
+    seg.breakdown = mieBreakdownTable[closest];
+  }
+
+  showSegRate(id, seg);
+}
+
+// ============================================================
+// International: Country → City dropdown
+// ============================================================
+function onCountryChange(id) {
+  const seg = segments.find(s => s.id === id);
+  if (!seg) return;
+  const country = document.getElementById(`seg_${id}_country`).value;
+  const postSel = document.getElementById(`seg_${id}_post`);
+  postSel.innerHTML = '<option value="">Select city...</option>';
+  seg.destination = '';
+  seg.mie = 0;
+  seg.lodging = 0;
+  document.getElementById(`seg_${id}_rateInfo`).classList.remove('visible');
+
+  if (!country) return;
+  const posts = internationalRates.filter(r => r.c === country).sort((a, b) => a.p.localeCompare(b.p));
+  posts.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.p;
+    opt.textContent = `${p.p} ($${p.m} M&IE)`;
+    postSel.appendChild(opt);
+  });
+}
+
+function onIntlPostChange(id) {
+  const seg = segments.find(s => s.id === id);
+  if (!seg) return;
+  const country = document.getElementById(`seg_${id}_country`).value;
+  const post = document.getElementById(`seg_${id}_post`).value;
+  if (!country || !post) return;
+
+  const entry = internationalRates.find(r => r.c === country && r.p === post);
+  if (!entry) return;
+
+  seg.mie = entry.m;
+  seg.lodging = entry.l;
+  seg.destination = `${post}, ${country}`;
+  seg.breakdown = {
+    breakfast: round(entry.m * 0.15),
+    lunch: round(entry.m * 0.25),
+    dinner: round(entry.m * 0.40),
+    incidentals: round(entry.m * 0.20)
+  };
+
+  showSegRate(id, seg);
+}
+
+function showSegRate(id, seg) {
+  const info = document.getElementById(`seg_${id}_rateInfo`);
+  let text = `${seg.destination} — M&IE: $${seg.mie}/day`;
+  if (lodgingMode === 'perdiem' && seg.lodging) {
+    text += ` | Lodging: $${seg.lodging}/night`;
+  }
+  info.textContent = text;
+  info.classList.add('visible');
+  showStatus(`seg_${id}_status`, '', '');
+}
+
+// ============================================================
+// Grid Generation (multi-segment)
+// ============================================================
+function generateGrid() {
+  // Validate all segments
+  for (const seg of segments) {
+    const startEl = document.getElementById(`seg_${seg.id}_start`);
+    const endEl = document.getElementById(`seg_${seg.id}_end`);
+    seg.startDate = startEl?.value || '';
+    seg.endDate = endEl?.value || '';
+
+    if (!seg.destination || !seg.mie) {
+      showStatus('globalStatus', `Please select a destination for all segments.`, 'error');
+      return;
+    }
+    if (!seg.startDate || !seg.endDate) {
+      showStatus('globalStatus', `Please enter start and end dates for all segments.`, 'error');
+      return;
+    }
+    const s = new Date(seg.startDate + 'T00:00:00');
+    const e = new Date(seg.endDate + 'T00:00:00');
+    if (e < s) {
+      showStatus('globalStatus', `End date must be on or after start date for "${seg.destination}".`, 'error');
+      return;
+    }
+  }
+
+  showStatus('globalStatus', '', '');
+
+  // Sort segments by start date
+  const sorted = [...segments].sort((a, b) => a.startDate.localeCompare(b.startDate));
+
+  // Build a set of transition dates: when seg[i-1].endDate === seg[i].startDate,
+  // that date is a transition day owned by the NEW segment (seg[i]).
+  // We skip that date from the previous segment to avoid duplication.
+  const transitionDates = new Set();
+  for (let i = 1; i < sorted.length; i++) {
+    if (sorted[i].startDate === sorted[i - 1].endDate) {
+      transitionDates.add(sorted[i].startDate);
+    }
+  }
+
+  // Compute total trip length (first start to last end)
+  const tripStart = new Date(sorted[0].startDate + 'T00:00:00');
+  const tripEnd = new Date(sorted[sorted.length - 1].endDate + 'T00:00:00');
+  const totalTripDays = Math.round((tripEnd - tripStart) / 86400000) + 1;
+  const isExtended = totalTripDays > 30;
+
+  days = [];
+  let globalDayNum = 0;
+
+  sorted.forEach((seg, segIdx) => {
+    const startD = new Date(seg.startDate + 'T00:00:00');
+    const endD = new Date(seg.endDate + 'T00:00:00');
+    const segDays = Math.round((endD - startD) / 86400000) + 1;
+
+    const breakdown = seg.breakdown || {
+      breakfast: round(seg.mie * 0.15),
+      lunch: round(seg.mie * 0.25),
+      dinner: round(seg.mie * 0.40),
+      incidentals: round(seg.mie * 0.20)
+    };
+
+    for (let i = 0; i < segDays; i++) {
+      const d = new Date(startD);
+      d.setDate(d.getDate() + i);
+      const dateStr = d.toISOString().slice(0, 10);
+
+      // If this is the LAST day of this segment AND it's a transition date,
+      // skip it — the next segment will own this day.
+      if (i === segDays - 1 && transitionDates.has(dateStr) && segIdx < sorted.length - 1) {
+        continue;
+      }
+
+      globalDayNum++;
+
+      // Is this a transition day? (first day of this segment that was also last day of prev segment)
+      const isTransition = (i === 0 && transitionDates.has(dateStr) && segIdx > 0);
+
+      // First/last day of the ENTIRE trip (not per-segment)
+      const isFirstDay = (segIdx === 0 && i === 0);
+      const isLastDay = (segIdx === sorted.length - 1 && i === segDays - 1);
+      const isFirstOrLast = isFirstDay || isLastDay;
+
+      // Transition days are NOT first/last — they get full rate,
+      // user deducts specific meals via checkboxes
+      let factor = 1;
+      if (isExtended) factor = 0.60;
+      if (isFirstOrLast && !isTransition) factor = isExtended ? 0.60 * 0.75 : 0.75;
+
+      days.push({
+        date: new Date(d),
+        dayNum: globalDayNum,
+        segmentIdx: segIdx,
+        segmentDest: seg.destination,
+        segmentType: seg.type,
+        isFirstOrLast: isFirstOrLast && !isTransition,
+        isTransition,
+        isExtended,
+        baseMIE: seg.mie,
+        lodging: seg.lodging,
+        factor,
+        adjustedMIE: round(seg.mie * factor),
+        adjustedLodging: (isFirstOrLast && !isTransition) ? 0 : seg.lodging,
+        breakfast: round(breakdown.breakfast * factor),
+        lunch: round(breakdown.lunch * factor),
+        dinner: round(breakdown.dinner * factor),
+        incidentals: round(breakdown.incidentals * factor),
+        providedBreakfast: false,
+        providedLunch: false,
+        providedDinner: false
+      });
+    }
+  });
+
+  renderGrid();
+  document.getElementById('bulkSelectCard').classList.remove('hidden');
+  document.getElementById('summaryCard').classList.remove('hidden');
+
+  // Set bulk date defaults
+  if (days.length > 0) {
+    document.getElementById('bulkStart').value = sorted[0].startDate;
+    document.getElementById('bulkEnd').value = sorted[sorted.length - 1].endDate;
+  }
+
+  recalculate();
+}
+
+function renderGrid() {
+  const thead = document.getElementById('dayGridHead');
+  const tbody = document.getElementById('dayGridBody');
+  const showLodging = (lodgingMode === 'perdiem');
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const multiSeg = segments.length > 1;
+  const colCount = showLodging ? 9 : 8;
+
+  // Column widths via colgroup
+  const colgroup = document.getElementById('dayGridColgroup');
+  if (colgroup) colgroup.remove();
+  const cg = document.createElement('colgroup');
+  cg.id = 'dayGridColgroup';
+  // Date | Day# | M&IE | Breakfast | Lunch | Dinner | Incidentals | [Lodging] | Reimbursable
+  if (showLodging) {
+    cg.innerHTML = '<col style="width:13%"><col style="width:6%"><col style="width:12%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:12%">';
+  } else {
+    cg.innerHTML = '<col style="width:15%"><col style="width:6%"><col style="width:13%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:10%"><col style="width:14%">';
+  }
+  const table = document.getElementById('dayGrid');
+  table.insertBefore(cg, thead);
+
+  let headerHTML = `<tr>
+    <th>Date</th><th style="text-align:center">#</th><th style="text-align:right">M&IE Rate</th>
+    <th style="text-align:right">Breakfast</th><th style="text-align:right">Lunch</th>
+    <th style="text-align:right">Dinner</th><th style="text-align:right">Incidentals</th>`;
+  if (showLodging) headerHTML += `<th style="text-align:right">Lodging</th>`;
+  headerHTML += `<th style="text-align:right">Reimbursable</th></tr>`;
+  thead.innerHTML = headerHTML;
+
+  tbody.innerHTML = '';
+  let lastSegIdx = -1;
+
+  days.forEach((day, idx) => {
+    // Segment divider row for multi-city trips
+    if (multiSeg && day.segmentIdx !== lastSegIdx) {
+      const divTr = document.createElement('tr');
+      divTr.className = 'seg-divider';
+      divTr.innerHTML = `<td colspan="${colCount}">${day.segmentDest}${day.isTransition ? ' (transition day)' : ''}</td>`;
+      tbody.appendChild(divTr);
+      lastSegIdx = day.segmentIdx;
+    }
+
+    const tr = document.createElement('tr');
+    if (day.isTransition) tr.classList.add('transition-day');
+    else if (day.isFirstOrLast) tr.classList.add('first-last-day');
+    else if (day.isExtended) tr.classList.add('extended-stay');
+
+    const dayName = dayNames[day.date.getDay()];
+    const dateStr = `${dayName}, ${day.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+
+    let rateNote = '';
+    if (day.isTransition) rateNote = '<br><small style="color:#1565c0">transit</small>';
+    else if (day.isFirstOrLast && day.isExtended) rateNote = '<br><small>75%&times;60%</small>';
+    else if (day.isFirstOrLast) rateNote = '<br><small>75%</small>';
+    else if (day.isExtended) rateNote = '<br><small>60%</small>';
+
+    const bChk = day.providedBreakfast ? 'checked' : '';
+    const lChk = day.providedLunch ? 'checked' : '';
+    const dChk = day.providedDinner ? 'checked' : '';
+
+    let html = `
+      <td>${dateStr}</td>
+      <td style="text-align:center">${day.dayNum}</td>
+      <td class="amount">$${day.adjustedMIE.toFixed(2)}${rateNote}</td>
+      <td class="meal-cell" id="bCell_${idx}"><input type="checkbox" ${bChk} onchange="toggleMeal(${idx},'breakfast',this.checked)"><span>$${day.breakfast.toFixed(2)}</span></td>
+      <td class="meal-cell" id="lCell_${idx}"><input type="checkbox" ${lChk} onchange="toggleMeal(${idx},'lunch',this.checked)"><span>$${day.lunch.toFixed(2)}</span></td>
+      <td class="meal-cell" id="dCell_${idx}"><input type="checkbox" ${dChk} onchange="toggleMeal(${idx},'dinner',this.checked)"><span>$${day.dinner.toFixed(2)}</span></td>
+      <td class="amount">$${day.incidentals.toFixed(2)}</td>`;
+    if (showLodging) {
+      html += `<td class="amount">$${day.adjustedLodging.toFixed(2)}</td>`;
+    }
+    html += `<td class="amount" id="reimb_${idx}" style="font-weight:600">$0.00</td>`;
+
+    tr.innerHTML = html;
+    tbody.appendChild(tr);
+  });
+}
+
+// ============================================================
+// Meal Toggle & Calculation
+// ============================================================
+function toggleMeal(idx, meal, checked) {
+  if (meal === 'breakfast') days[idx].providedBreakfast = checked;
+  else if (meal === 'lunch') days[idx].providedLunch = checked;
+  else if (meal === 'dinner') days[idx].providedDinner = checked;
+  recalculate();
+}
+
+function recalculate() {
+  const showLodging = (lodgingMode === 'perdiem');
+  let totalGross = 0;
+  let totalDeductions = 0;
+  let totalNet = 0;
+  let totalLodging = 0;
+
+  days.forEach((day, idx) => {
+    let deduction = 0;
+    if (day.providedBreakfast) deduction += day.breakfast;
+    if (day.providedLunch) deduction += day.lunch;
+    if (day.providedDinner) deduction += day.dinner;
+
+    const mieReimbursable = day.adjustedMIE - deduction;
+    const dayTotal = mieReimbursable + (showLodging ? day.adjustedLodging : 0);
+
+    updateMealCell(`bCell_${idx}`, day.breakfast, day.providedBreakfast);
+    updateMealCell(`lCell_${idx}`, day.lunch, day.providedLunch);
+    updateMealCell(`dCell_${idx}`, day.dinner, day.providedDinner);
+
+    document.getElementById(`reimb_${idx}`).textContent = `$${dayTotal.toFixed(2)}`;
+
+    totalGross += day.adjustedMIE;
+    totalDeductions += deduction;
+    totalNet += mieReimbursable;
+    totalLodging += day.adjustedLodging;
+  });
+
+  // Build summary boxes
+  const grid = document.getElementById('summaryGrid');
+  let html = `
+    <div class="summary-box">
+      <div class="label">Total M&IE (Before Deductions)</div>
+      <div class="value">$${totalGross.toFixed(2)}</div>
+    </div>
+    <div class="summary-box">
+      <div class="label">Provided Meal Deductions</div>
+      <div class="value">${totalDeductions > 0 ? '-' : ''}$${totalDeductions.toFixed(2)}</div>
+    </div>`;
+
+  if (showLodging) {
+    html += `
+    <div class="summary-box">
+      <div class="label">Total Lodging Per Diem</div>
+      <div class="value">$${totalLodging.toFixed(2)}</div>
+    </div>
+    <div class="summary-box total">
+      <div class="label">Net Reimbursable (M&IE + Lodging)</div>
+      <div class="value">$${(totalNet + totalLodging).toFixed(2)}</div>
+    </div>`;
+  } else {
+    html += `
+    <div class="summary-box total">
+      <div class="label">Net Reimbursable M&IE</div>
+      <div class="value">$${totalNet.toFixed(2)}</div>
+    </div>`;
+  }
+  grid.innerHTML = html;
+}
+
+function updateMealCell(id, amount, isDeducted) {
+  const cell = document.getElementById(id);
+  if (!cell) return;
+  const span = cell.querySelector('span');
+  if (span) {
+    if (isDeducted) {
+      span.className = 'deducted';
+      span.textContent = `$${amount.toFixed(2)}`;
+    } else {
+      span.className = '';
+      span.textContent = `$${amount.toFixed(2)}`;
+    }
+  }
+}
+
+// ============================================================
+// Bulk Selection
+// ============================================================
+function applyBulkSelection() {
+  const bStart = document.getElementById('bulkStart').value;
+  const bEnd = document.getElementById('bulkEnd').value;
+  if (!bStart || !bEnd) return;
+
+  const startD = new Date(bStart + 'T00:00:00');
+  const endD = new Date(bEnd + 'T00:00:00');
+  const doB = document.getElementById('bulkBreakfast').checked;
+  const doL = document.getElementById('bulkLunch').checked;
+  const doD = document.getElementById('bulkDinner').checked;
+
+  days.forEach(day => {
+    if (day.date >= startD && day.date <= endD) {
+      if (doB) day.providedBreakfast = true;
+      if (doL) day.providedLunch = true;
+      if (doD) day.providedDinner = true;
+    }
+  });
+
+  renderGrid();
+  recalculate();
+}
+
+function clearAllMeals() {
+  days.forEach(day => {
+    day.providedBreakfast = false;
+    day.providedLunch = false;
+    day.providedDinner = false;
+  });
+  renderGrid();
+  recalculate();
+}
+
+// ============================================================
+// Helpers
+// ============================================================
+function round(n) { return Math.round(n * 100) / 100; }
+
+
+function showStatus(id, msg, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'status';
+  if (msg && type) el.classList.add(type);
+}
+</script>
+
+</body>
+</html>
