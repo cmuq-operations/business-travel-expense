@@ -3,13 +3,13 @@
     "source": "U.S. General Services Administration (GSA)",
     "fiscalYear": "FY2026",
     "effectiveDate": "2025-10-01",
-    "lastUpdated": "2026-03-25",
+    "lastUpdated": "2026-03-27",
     "downloadUrl": "https://www.gsa.gov/system/files/FY2026_PerDiemMasterRatesFile.xlsx",
     "standardRate": {
       "mie": 68,
       "lodging": 110
     },
-    "notes": "Update annually when new FY rates published (typically mid-August, effective Oct 1). Cities not listed use the standard CONUS rate."
+    "notes": "Includes seasonal lodging rates. M&IE does not vary by season for domestic. Cities not listed use the standard CONUS rate."
   },
   "mieBreakdown": [
     {
@@ -53,1777 +53,5193 @@
       "state": "AL",
       "city": "Birmingham",
       "mie": 80,
-      "lodging": 126
+      "lodging": 126,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "AL",
       "city": "Gulf Shores",
       "mie": 74,
-      "lodging": 216
+      "lodging": 134,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "AL",
+      "city": "Gulf Shores",
+      "mie": 74,
+      "lodging": 216,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "AL",
+      "city": "Gulf Shores",
+      "mie": 74,
+      "lodging": 163,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "AL",
+      "city": "Gulf Shores",
+      "mie": 74,
+      "lodging": 134,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "AL",
       "city": "Huntsville",
       "mie": 74,
-      "lodging": 141
+      "lodging": 134,
+      "seasonBegin": "April 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "AL",
+      "city": "Huntsville",
+      "mie": 74,
+      "lodging": 141,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "AL",
+      "city": "Huntsville",
+      "mie": 74,
+      "lodging": 141,
+      "seasonBegin": "October 1",
+      "seasonEnd": "March 31"
     },
     {
       "state": "AL",
       "city": "Mobile",
       "mie": 74,
-      "lodging": 114
+      "lodging": 114,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "AR",
       "city": "Hot Springs",
       "mie": 68,
-      "lodging": 114
+      "lodging": 114,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "AZ",
       "city": "Grand Canyon / Flagstaff",
       "mie": 80,
-      "lodging": 144
+      "lodging": 144,
+      "seasonBegin": "March 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "AZ",
+      "city": "Grand Canyon / Flagstaff",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "AZ",
+      "city": "Grand Canyon / Flagstaff",
+      "mie": 80,
+      "lodging": 144,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "AZ",
       "city": "Kayenta",
       "mie": 74,
-      "lodging": 145
+      "lodging": 145,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "AZ",
       "city": "Phoenix / Scottsdale",
       "mie": 86,
-      "lodging": 229
+      "lodging": 161,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Phoenix / Scottsdale",
+      "mie": 86,
+      "lodging": 229,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Phoenix / Scottsdale",
+      "mie": 86,
+      "lodging": 113,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Phoenix / Scottsdale",
+      "mie": 86,
+      "lodging": 160,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Phoenix / Scottsdale",
+      "mie": 86,
+      "lodging": 160,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "AZ",
       "city": "Sedona",
       "mie": 92,
-      "lodging": 274
+      "lodging": 164,
+      "seasonBegin": "January 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "AZ",
+      "city": "Sedona",
+      "mie": 92,
+      "lodging": 274,
+      "seasonBegin": "March 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "AZ",
+      "city": "Sedona",
+      "mie": 92,
+      "lodging": 183,
+      "seasonBegin": "May 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Sedona",
+      "mie": 92,
+      "lodging": 213,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Sedona",
+      "mie": 92,
+      "lodging": 213,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "AZ",
       "city": "Tucson",
       "mie": 80,
-      "lodging": 171
+      "lodging": 123,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "AZ",
+      "city": "Tucson",
+      "mie": 80,
+      "lodging": 171,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "AZ",
+      "city": "Tucson",
+      "mie": 80,
+      "lodging": 123,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "CA",
       "city": "Antioch / Brentwood / Concord",
       "mie": 86,
-      "lodging": 147
+      "lodging": 147,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Bakersfield / Ridgecrest",
       "mie": 74,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Barstow / Ontario / Victorville",
       "mie": 86,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Death Valley",
       "mie": 80,
-      "lodging": 142
+      "lodging": 142,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Eureka / Arcata / McKinleyville",
       "mie": 86,
-      "lodging": 172
+      "lodging": 172,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "Eureka / Arcata / McKinleyville",
+      "mie": 86,
+      "lodging": 125,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CA",
+      "city": "Eureka / Arcata / McKinleyville",
+      "mie": 86,
+      "lodging": 125,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "Fresno",
       "mie": 86,
-      "lodging": 129
+      "lodging": 129,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Los Angeles",
       "mie": 86,
-      "lodging": 191
+      "lodging": 191,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Mammoth Lakes",
       "mie": 86,
-      "lodging": 195
+      "lodging": 139,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "Mammoth Lakes",
+      "mie": 86,
+      "lodging": 195,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CA",
+      "city": "Mammoth Lakes",
+      "mie": 86,
+      "lodging": 139,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CA",
       "city": "Mill Valley / San Rafael / Novato",
       "mie": 92,
-      "lodging": 175
+      "lodging": 175,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "Mill Valley / San Rafael / Novato",
+      "mie": 92,
+      "lodging": 153,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "CA",
       "city": "Monterey",
       "mie": 92,
-      "lodging": 279
+      "lodging": 199,
+      "seasonBegin": "February 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "CA",
+      "city": "Monterey",
+      "mie": 92,
+      "lodging": 279,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "Monterey",
+      "mie": 92,
+      "lodging": 191,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "CA",
+      "city": "Monterey",
+      "mie": 92,
+      "lodging": 191,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "Napa",
       "mie": 92,
-      "lodging": 246
+      "lodging": 172,
+      "seasonBegin": "December 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "CA",
+      "city": "Napa",
+      "mie": 92,
+      "lodging": 246,
+      "seasonBegin": "February 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "Napa",
+      "mie": 92,
+      "lodging": 246,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CA",
       "city": "Oakhurst",
       "mie": 80,
-      "lodging": 135
+      "lodging": 135,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Oakland",
       "mie": 92,
-      "lodging": 145
+      "lodging": 145,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Palm Springs",
       "mie": 86,
-      "lodging": 186
+      "lodging": 141,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "Palm Springs",
+      "mie": 86,
+      "lodging": 186,
+      "seasonBegin": "October 1",
+      "seasonEnd": "April 30"
     },
     {
       "state": "CA",
       "city": "Point Arena / Gualala",
       "mie": 86,
-      "lodging": 129
+      "lodging": 129,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Sacramento",
       "mie": 86,
-      "lodging": 150
+      "lodging": 150,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "San Diego",
       "mie": 86,
-      "lodging": 237
+      "lodging": 199,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "San Diego",
+      "mie": 86,
+      "lodging": 237,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "CA",
+      "city": "San Diego",
+      "mie": 86,
+      "lodging": 199,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "CA",
       "city": "San Francisco",
       "mie": 92,
-      "lodging": 272
+      "lodging": 259,
+      "seasonBegin": "January 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "San Francisco",
+      "mie": 92,
+      "lodging": 272,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
+    },
+    {
+      "state": "CA",
+      "city": "San Francisco",
+      "mie": 92,
+      "lodging": 272,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "San Luis Obispo",
       "mie": 86,
-      "lodging": 203
+      "lodging": 163,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "San Luis Obispo",
+      "mie": 86,
+      "lodging": 203,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "CA",
+      "city": "San Luis Obispo",
+      "mie": 86,
+      "lodging": 163,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "CA",
       "city": "San Mateo / Foster City / Belmont",
       "mie": 86,
-      "lodging": 183
+      "lodging": 183,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Santa Barbara",
       "mie": 92,
-      "lodging": 262
+      "lodging": 262,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "Santa Barbara",
+      "mie": 92,
+      "lodging": 205,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "CA",
+      "city": "Santa Barbara",
+      "mie": 92,
+      "lodging": 205,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "Santa Cruz",
       "mie": 86,
-      "lodging": 176
+      "lodging": 176,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "Santa Cruz",
+      "mie": 86,
+      "lodging": 139,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CA",
+      "city": "Santa Cruz",
+      "mie": 86,
+      "lodging": 139,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "Santa Monica",
       "mie": 92,
-      "lodging": 273
+      "lodging": 273,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Santa Rosa",
       "mie": 86,
-      "lodging": 157
+      "lodging": 157,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "South Lake Tahoe",
       "mie": 86,
-      "lodging": 247
+      "lodging": 143,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CA",
+      "city": "South Lake Tahoe",
+      "mie": 86,
+      "lodging": 247,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CA",
+      "city": "South Lake Tahoe",
+      "mie": 86,
+      "lodging": 171,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "South Lake Tahoe",
+      "mie": 86,
+      "lodging": 141,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
+    },
+    {
+      "state": "CA",
+      "city": "South Lake Tahoe",
+      "mie": 86,
+      "lodging": 141,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "Stockton",
       "mie": 74,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Sunnyvale / Palo Alto / San Jose",
       "mie": 92,
-      "lodging": 192
+      "lodging": 192,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Tahoe City",
       "mie": 86,
-      "lodging": 131
+      "lodging": 131,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Truckee",
       "mie": 86,
-      "lodging": 173
+      "lodging": 169,
+      "seasonBegin": "December 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "CA",
+      "city": "Truckee",
+      "mie": 86,
+      "lodging": 173,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CA",
+      "city": "Truckee",
+      "mie": 86,
+      "lodging": 146,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CA",
+      "city": "Truckee",
+      "mie": 86,
+      "lodging": 142,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
+    },
+    {
+      "state": "CA",
+      "city": "Truckee",
+      "mie": 86,
+      "lodging": 142,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CA",
       "city": "Visalia",
       "mie": 80,
-      "lodging": 131
+      "lodging": 131,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "West Sacramento / Davis",
       "mie": 80,
-      "lodging": 142
+      "lodging": 142,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CA",
       "city": "Yosemite National Park",
       "mie": 86,
-      "lodging": 203
+      "lodging": 203,
+      "seasonBegin": "January 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "CA",
+      "city": "Yosemite National Park",
+      "mie": 86,
+      "lodging": 181,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CA",
+      "city": "Yosemite National Park",
+      "mie": 86,
+      "lodging": 181,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "CO",
       "city": "Aspen",
       "mie": 92,
-      "lodging": 407
+      "lodging": 207,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Aspen",
+      "mie": 92,
+      "lodging": 407,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Aspen",
+      "mie": 92,
+      "lodging": 207,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CO",
       "city": "Boulder / Broomfield",
       "mie": 80,
-      "lodging": 173
+      "lodging": 173,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Boulder / Broomfield",
+      "mie": 80,
+      "lodging": 125,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "CO",
+      "city": "Boulder / Broomfield",
+      "mie": 80,
+      "lodging": 173,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "CO",
       "city": "Colorado Springs",
       "mie": 86,
-      "lodging": 168
+      "lodging": 168,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CO",
+      "city": "Colorado Springs",
+      "mie": 86,
+      "lodging": 123,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CO",
+      "city": "Colorado Springs",
+      "mie": 86,
+      "lodging": 123,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CO",
       "city": "Cortez",
       "mie": 74,
-      "lodging": 133
+      "lodging": 133,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Cortez",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "CO",
+      "city": "Cortez",
+      "mie": 74,
+      "lodging": 133,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "CO",
       "city": "Crested Butte / Gunnison",
       "mie": 86,
-      "lodging": 154
+      "lodging": 154,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CO",
       "city": "Denver / Aurora",
       "mie": 92,
-      "lodging": 215
+      "lodging": 215,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Denver / Aurora",
+      "mie": 92,
+      "lodging": 165,
+      "seasonBegin": "November 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Denver / Aurora",
+      "mie": 92,
+      "lodging": 215,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "CO",
       "city": "Douglas",
       "mie": 80,
-      "lodging": 142
+      "lodging": 142,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CO",
+      "city": "Douglas",
+      "mie": 80,
+      "lodging": 111,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CO",
+      "city": "Douglas",
+      "mie": 80,
+      "lodging": 111,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CO",
       "city": "Durango",
       "mie": 80,
-      "lodging": 184
+      "lodging": 184,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Durango",
+      "mie": 80,
+      "lodging": 121,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "CO",
       "city": "Fort Collins / Loveland",
       "mie": 80,
-      "lodging": 140
+      "lodging": 140,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "CO",
+      "city": "Fort Collins / Loveland",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CO",
+      "city": "Fort Collins / Loveland",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "CO",
       "city": "Grand Lake",
       "mie": 86,
-      "lodging": 173
+      "lodging": 122,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CO",
+      "city": "Grand Lake",
+      "mie": 86,
+      "lodging": 173,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Grand Lake",
+      "mie": 86,
+      "lodging": 145,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Grand Lake",
+      "mie": 86,
+      "lodging": 145,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CO",
       "city": "Montrose",
       "mie": 74,
-      "lodging": 185
+      "lodging": 185,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Montrose",
+      "mie": 74,
+      "lodging": 136,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CO",
+      "city": "Montrose",
+      "mie": 74,
+      "lodging": 185,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "CO",
       "city": "Silverthorne / Breckenridge",
       "mie": 92,
-      "lodging": 282
+      "lodging": 162,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Silverthorne / Breckenridge",
+      "mie": 92,
+      "lodging": 282,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Silverthorne / Breckenridge",
+      "mie": 92,
+      "lodging": 162,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CO",
       "city": "Steamboat Springs",
       "mie": 92,
-      "lodging": 288
+      "lodging": 123,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "CO",
+      "city": "Steamboat Springs",
+      "mie": 92,
+      "lodging": 288,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Steamboat Springs",
+      "mie": 92,
+      "lodging": 179,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Steamboat Springs",
+      "mie": 92,
+      "lodging": 132,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CO",
       "city": "Telluride",
       "mie": 92,
-      "lodging": 350
+      "lodging": 184,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Telluride",
+      "mie": 92,
+      "lodging": 350,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Telluride",
+      "mie": 92,
+      "lodging": 184,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CO",
       "city": "Vail",
       "mie": 92,
-      "lodging": 397
+      "lodging": 201,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "CO",
+      "city": "Vail",
+      "mie": 92,
+      "lodging": 397,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "CO",
+      "city": "Vail",
+      "mie": 92,
+      "lodging": 201,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "CT",
       "city": "Bridgeport / Danbury",
       "mie": 86,
-      "lodging": 146
+      "lodging": 146,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CT",
       "city": "Hartford",
       "mie": 80,
-      "lodging": 138
+      "lodging": 138,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CT",
       "city": "New Haven",
       "mie": 80,
-      "lodging": 130
+      "lodging": 130,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "CT",
       "city": "New London / Groton",
       "mie": 86,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "DC",
       "city": "District of Columbia",
       "mie": 92,
-      "lodging": 276
+      "lodging": 183,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "DC",
+      "city": "District of Columbia",
+      "mie": 92,
+      "lodging": 276,
+      "seasonBegin": "March 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "DC",
+      "city": "District of Columbia",
+      "mie": 92,
+      "lodging": 196,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "DC",
+      "city": "District of Columbia",
+      "mie": 92,
+      "lodging": 275,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "DC",
+      "city": "District of Columbia",
+      "mie": 92,
+      "lodging": 275,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "DE",
       "city": "Lewes",
       "mie": 74,
-      "lodging": 221
+      "lodging": 221,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "DE",
+      "city": "Lewes",
+      "mie": 74,
+      "lodging": 124,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "DE",
+      "city": "Lewes",
+      "mie": 74,
+      "lodging": 124,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "DE",
       "city": "Wilmington",
       "mie": 74,
-      "lodging": 127
+      "lodging": 127,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "FL",
       "city": "Boca Raton / Delray Beach / Jupiter",
       "mie": 86,
-      "lodging": 244
+      "lodging": 244,
+      "seasonBegin": "January 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Boca Raton / Delray Beach / Jupiter",
+      "mie": 86,
+      "lodging": 143,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Boca Raton / Delray Beach / Jupiter",
+      "mie": 86,
+      "lodging": 171,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "FL",
       "city": "Bradenton",
       "mie": 80,
-      "lodging": 225
+      "lodging": 145,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Bradenton",
+      "mie": 80,
+      "lodging": 225,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Bradenton",
+      "mie": 80,
+      "lodging": 151,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "Cocoa Beach",
       "mie": 74,
-      "lodging": 208
+      "lodging": 166,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Cocoa Beach",
+      "mie": 74,
+      "lodging": 208,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Cocoa Beach",
+      "mie": 74,
+      "lodging": 166,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "Daytona Beach",
       "mie": 80,
-      "lodging": 157
+      "lodging": 116,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Daytona Beach",
+      "mie": 80,
+      "lodging": 157,
+      "seasonBegin": "January 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Daytona Beach",
+      "mie": 80,
+      "lodging": 138,
+      "seasonBegin": "May 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "FL",
+      "city": "Daytona Beach",
+      "mie": 80,
+      "lodging": 116,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "FL",
       "city": "Fort Lauderdale",
       "mie": 86,
-      "lodging": 224
+      "lodging": 224,
+      "seasonBegin": "January 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Lauderdale",
+      "mie": 86,
+      "lodging": 143,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Lauderdale",
+      "mie": 86,
+      "lodging": 172,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "FL",
       "city": "Fort Myers",
       "mie": 80,
-      "lodging": 216
+      "lodging": 139,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Myers",
+      "mie": 80,
+      "lodging": 216,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Myers",
+      "mie": 80,
+      "lodging": 139,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "FL",
       "city": "Fort Walton Beach / De Funiak Springs",
       "mie": 86,
-      "lodging": 260
+      "lodging": 164,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Walton Beach / De Funiak Springs",
+      "mie": 86,
+      "lodging": 260,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Walton Beach / De Funiak Springs",
+      "mie": 86,
+      "lodging": 184,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Walton Beach / De Funiak Springs",
+      "mie": 86,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "FL",
+      "city": "Fort Walton Beach / De Funiak Springs",
+      "mie": 86,
+      "lodging": 164,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "FL",
       "city": "Gulf Breeze",
       "mie": 74,
-      "lodging": 214
+      "lodging": 124,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Gulf Breeze",
+      "mie": 74,
+      "lodging": 214,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "FL",
+      "city": "Gulf Breeze",
+      "mie": 74,
+      "lodging": 161,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "FL",
+      "city": "Gulf Breeze",
+      "mie": 74,
+      "lodging": 124,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "FL",
       "city": "Key West",
       "mie": 86,
-      "lodging": 436
+      "lodging": 366,
+      "seasonBegin": "December 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "FL",
+      "city": "Key West",
+      "mie": 86,
+      "lodging": 436,
+      "seasonBegin": "February 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Key West",
+      "mie": 86,
+      "lodging": 258,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Key West",
+      "mie": 86,
+      "lodging": 269,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "FL",
       "city": "Miami",
       "mie": 92,
-      "lodging": 232
+      "lodging": 182,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "FL",
+      "city": "Miami",
+      "mie": 92,
+      "lodging": 210,
+      "seasonBegin": "December 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "FL",
+      "city": "Miami",
+      "mie": 92,
+      "lodging": 232,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Miami",
+      "mie": 92,
+      "lodging": 145,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Miami",
+      "mie": 92,
+      "lodging": 145,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "FL",
       "city": "Naples",
       "mie": 80,
-      "lodging": 314
+      "lodging": 257,
+      "seasonBegin": "December 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "FL",
+      "city": "Naples",
+      "mie": 80,
+      "lodging": 314,
+      "seasonBegin": "February 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Naples",
+      "mie": 80,
+      "lodging": 164,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Naples",
+      "mie": 80,
+      "lodging": 164,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "FL",
       "city": "Orlando",
       "mie": 80,
-      "lodging": 169
+      "lodging": 140,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Orlando",
+      "mie": 80,
+      "lodging": 169,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Orlando",
+      "mie": 80,
+      "lodging": 140,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "FL",
       "city": "Panama City",
       "mie": 80,
-      "lodging": 194
+      "lodging": 110,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Panama City",
+      "mie": 80,
+      "lodging": 194,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "FL",
+      "city": "Panama City",
+      "mie": 80,
+      "lodging": 147,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "FL",
+      "city": "Panama City",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "FL",
       "city": "Pensacola",
       "mie": 74,
-      "lodging": 190
+      "lodging": 120,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Pensacola",
+      "mie": 74,
+      "lodging": 190,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "FL",
+      "city": "Pensacola",
+      "mie": 74,
+      "lodging": 149,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "FL",
+      "city": "Pensacola",
+      "mie": 74,
+      "lodging": 120,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "FL",
       "city": "Punta Gorda",
       "mie": 74,
-      "lodging": 192
+      "lodging": 124,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Punta Gorda",
+      "mie": 74,
+      "lodging": 192,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Punta Gorda",
+      "mie": 74,
+      "lodging": 124,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "Sarasota",
       "mie": 86,
-      "lodging": 205
+      "lodging": 205,
+      "seasonBegin": "February 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Sarasota",
+      "mie": 86,
+      "lodging": 131,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Sarasota",
+      "mie": 86,
+      "lodging": 145,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "Sebring",
       "mie": 74,
-      "lodging": 219
+      "lodging": 126,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Sebring",
+      "mie": 74,
+      "lodging": 219,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Sebring",
+      "mie": 74,
+      "lodging": 126,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "St. Augustine",
       "mie": 80,
-      "lodging": 170
+      "lodging": 151,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "St. Augustine",
+      "mie": 80,
+      "lodging": 170,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "St. Augustine",
+      "mie": 80,
+      "lodging": 151,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "FL",
       "city": "Stuart",
       "mie": 80,
-      "lodging": 214
+      "lodging": 129,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Stuart",
+      "mie": 80,
+      "lodging": 214,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "FL",
+      "city": "Stuart",
+      "mie": 80,
+      "lodging": 129,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "Tallahassee",
       "mie": 80,
-      "lodging": 138
+      "lodging": 138,
+      "seasonBegin": "January 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Tallahassee",
+      "mie": 80,
+      "lodging": 113,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Tallahassee",
+      "mie": 80,
+      "lodging": 113,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "FL",
       "city": "Tampa / St. Petersburg",
       "mie": 80,
-      "lodging": 200
+      "lodging": 200,
+      "seasonBegin": "February 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Tampa / St. Petersburg",
+      "mie": 80,
+      "lodging": 148,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Tampa / St. Petersburg",
+      "mie": 80,
+      "lodging": 148,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "FL",
       "city": "Vero Beach",
       "mie": 74,
-      "lodging": 259
+      "lodging": 259,
+      "seasonBegin": "December 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "FL",
+      "city": "Vero Beach",
+      "mie": 74,
+      "lodging": 181,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "FL",
+      "city": "Vero Beach",
+      "mie": 74,
+      "lodging": 181,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "GA",
       "city": "Athens",
       "mie": 74,
-      "lodging": 136
+      "lodging": 136,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "GA",
       "city": "Atlanta",
       "mie": 86,
-      "lodging": 197
+      "lodging": 182,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "GA",
+      "city": "Atlanta",
+      "mie": 86,
+      "lodging": 197,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "GA",
+      "city": "Atlanta",
+      "mie": 86,
+      "lodging": 182,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "GA",
       "city": "Augusta",
       "mie": 74,
-      "lodging": 125
+      "lodging": 125,
+      "seasonBegin": "July 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "GA",
+      "city": "Augusta",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "May 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "GA",
+      "city": "Augusta",
+      "mie": 74,
+      "lodging": 125,
+      "seasonBegin": "October 1",
+      "seasonEnd": "April 30"
     },
     {
       "state": "GA",
       "city": "Jekyll Island / Brunswick",
       "mie": 86,
-      "lodging": 223
+      "lodging": 172,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "GA",
+      "city": "Jekyll Island / Brunswick",
+      "mie": 86,
+      "lodging": 223,
+      "seasonBegin": "March 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "GA",
+      "city": "Jekyll Island / Brunswick",
+      "mie": 86,
+      "lodging": 172,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "GA",
       "city": "Marietta",
       "mie": 74,
-      "lodging": 126
+      "lodging": 126,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "GA",
       "city": "Savannah",
       "mie": 80,
-      "lodging": 176
+      "lodging": 176,
+      "seasonBegin": "March 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "GA",
+      "city": "Savannah",
+      "mie": 80,
+      "lodging": 147,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "GA",
+      "city": "Savannah",
+      "mie": 80,
+      "lodging": 147,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "IA",
       "city": "Dallas",
       "mie": 80,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "IA",
       "city": "Des Moines",
       "mie": 80,
-      "lodging": 121
+      "lodging": 121,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "ID",
       "city": "Boise",
       "mie": 86,
-      "lodging": 191
+      "lodging": 191,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "ID",
+      "city": "Boise",
+      "mie": 86,
+      "lodging": 167,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "ID",
+      "city": "Boise",
+      "mie": 86,
+      "lodging": 191,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "ID",
       "city": "Coeur d'Alene",
       "mie": 74,
-      "lodging": 217
+      "lodging": 217,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "ID",
+      "city": "Coeur d'Alene",
+      "mie": 74,
+      "lodging": 142,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "ID",
+      "city": "Coeur d'Alene",
+      "mie": 74,
+      "lodging": 142,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "ID",
       "city": "Sun Valley / Ketchum",
       "mie": 80,
-      "lodging": 300
+      "lodging": 181,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "ID",
+      "city": "Sun Valley / Ketchum",
+      "mie": 80,
+      "lodging": 300,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "ID",
+      "city": "Sun Valley / Ketchum",
+      "mie": 80,
+      "lodging": 295,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "ID",
+      "city": "Sun Valley / Ketchum",
+      "mie": 80,
+      "lodging": 191,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "IL",
       "city": "Bolingbrook / Romeoville / Lemont",
       "mie": 74,
-      "lodging": 114
+      "lodging": 114,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "IL",
       "city": "Chicago",
       "mie": 92,
-      "lodging": 234
+      "lodging": 234,
+      "seasonBegin": "April 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "IL",
+      "city": "Chicago",
+      "mie": 92,
+      "lodging": 142,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "IL",
+      "city": "Chicago",
+      "mie": 92,
+      "lodging": 202,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "IL",
+      "city": "Chicago",
+      "mie": 92,
+      "lodging": 223,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
+    },
+    {
+      "state": "IL",
+      "city": "Chicago",
+      "mie": 92,
+      "lodging": 223,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "IL",
       "city": "East St. Louis / O'Fallon / Fairview Heights",
       "mie": 86,
-      "lodging": 150
+      "lodging": 150,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "IL",
       "city": "Oak Brook Terrace",
       "mie": 80,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "IN",
       "city": "Bloomington",
       "mie": 74,
-      "lodging": 139
+      "lodging": 139,
+      "seasonBegin": "May 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "IN",
+      "city": "Bloomington",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "IN",
+      "city": "Bloomington",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "IN",
       "city": "Indianapolis / Carmel",
       "mie": 80,
-      "lodging": 133
+      "lodging": 133,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "IN",
       "city": "Lafayette / West Lafayette",
       "mie": 74,
-      "lodging": 143
+      "lodging": 143,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "IN",
+      "city": "Lafayette / West Lafayette",
+      "mie": 74,
+      "lodging": 123,
+      "seasonBegin": "October 1",
+      "seasonEnd": "July 31"
     },
     {
       "state": "KS",
       "city": "Kansas City / Overland Park",
       "mie": 80,
-      "lodging": 135
+      "lodging": 135,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "KY",
       "city": "Boone",
       "mie": 68,
-      "lodging": 116
+      "lodging": 116,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "KY",
       "city": "Kenton",
       "mie": 86,
-      "lodging": 163
+      "lodging": 163,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "KY",
       "city": "Lexington",
       "mie": 80,
-      "lodging": 118
+      "lodging": 118,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "KY",
       "city": "Louisville",
       "mie": 80,
-      "lodging": 164
+      "lodging": 155,
+      "seasonBegin": "February 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "KY",
+      "city": "Louisville",
+      "mie": 80,
+      "lodging": 134,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "KY",
+      "city": "Louisville",
+      "mie": 80,
+      "lodging": 120,
+      "seasonBegin": "November 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "KY",
+      "city": "Louisville",
+      "mie": 80,
+      "lodging": 164,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "KY",
+      "city": "Louisville",
+      "mie": 80,
+      "lodging": 164,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "LA",
       "city": "Alexandria / Leesville / Natchitoches",
       "mie": 68,
-      "lodging": 112
+      "lodging": 112,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "LA",
       "city": "New Orleans",
       "mie": 80,
-      "lodging": 179
+      "lodging": 179,
+      "seasonBegin": "February 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "LA",
+      "city": "New Orleans",
+      "mie": 80,
+      "lodging": 133,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "LA",
+      "city": "New Orleans",
+      "mie": 80,
+      "lodging": 157,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "LA",
+      "city": "New Orleans",
+      "mie": 80,
+      "lodging": 157,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MA",
       "city": "Andover",
       "mie": 80,
-      "lodging": 137
+      "lodging": 137,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MA",
       "city": "Boston / Cambridge",
       "mie": 92,
-      "lodging": 349
+      "lodging": 291,
+      "seasonBegin": "March 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MA",
+      "city": "Boston / Cambridge",
+      "mie": 92,
+      "lodging": 209,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "MA",
+      "city": "Boston / Cambridge",
+      "mie": 92,
+      "lodging": 349,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "MA",
+      "city": "Boston / Cambridge",
+      "mie": 92,
+      "lodging": 349,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MA",
       "city": "Burlington / Woburn",
       "mie": 86,
-      "lodging": 178
+      "lodging": 178,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MA",
+      "city": "Burlington / Woburn",
+      "mie": 86,
+      "lodging": 144,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "MA",
+      "city": "Burlington / Woburn",
+      "mie": 86,
+      "lodging": 178,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "MA",
       "city": "Falmouth",
       "mie": 86,
-      "lodging": 253
+      "lodging": 253,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MA",
+      "city": "Falmouth",
+      "mie": 86,
+      "lodging": 142,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "MA",
+      "city": "Falmouth",
+      "mie": 86,
+      "lodging": 142,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MA",
       "city": "Hyannis",
       "mie": 92,
-      "lodging": 209
+      "lodging": 209,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MA",
+      "city": "Hyannis",
+      "mie": 92,
+      "lodging": 131,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "MA",
+      "city": "Hyannis",
+      "mie": 92,
+      "lodging": 131,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MA",
       "city": "Martha's Vineyard",
       "mie": 92,
-      "lodging": 462
+      "lodging": 462,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MA",
+      "city": "Martha's Vineyard",
+      "mie": 92,
+      "lodging": 196,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "MA",
       "city": "Nantucket",
       "mie": 92,
-      "lodging": 471
+      "lodging": 471,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MA",
+      "city": "Nantucket",
+      "mie": 92,
+      "lodging": 175,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "MA",
       "city": "Northampton",
       "mie": 80,
-      "lodging": 157
+      "lodging": 157,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MA",
       "city": "Pittsfield",
       "mie": 86,
-      "lodging": 178
+      "lodging": 178,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MA",
+      "city": "Pittsfield",
+      "mie": 86,
+      "lodging": 136,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "MA",
+      "city": "Pittsfield",
+      "mie": 86,
+      "lodging": 136,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MA",
       "city": "Plymouth / Taunton / New Bedford",
       "mie": 80,
-      "lodging": 126
+      "lodging": 126,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MA",
       "city": "Quincy",
       "mie": 80,
-      "lodging": 175
+      "lodging": 175,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MA",
+      "city": "Quincy",
+      "mie": 80,
+      "lodging": 139,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "MA",
+      "city": "Quincy",
+      "mie": 80,
+      "lodging": 175,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "MA",
       "city": "Springfield",
       "mie": 74,
-      "lodging": 128
+      "lodging": 128,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MA",
       "city": "Worcester",
       "mie": 80,
-      "lodging": 135
+      "lodging": 135,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MD",
       "city": "Aberdeen / Bel Air / Belcamp",
       "mie": 74,
-      "lodging": 113
+      "lodging": 113,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MD",
       "city": "Annapolis",
       "mie": 80,
-      "lodging": 161
+      "lodging": 161,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MD",
+      "city": "Annapolis",
+      "mie": 80,
+      "lodging": 125,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "MD",
+      "city": "Annapolis",
+      "mie": 80,
+      "lodging": 161,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "MD",
       "city": "Baltimore City",
       "mie": 86,
-      "lodging": 150
+      "lodging": 150,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MD",
       "city": "Cambridge / St. Michaels",
       "mie": 80,
-      "lodging": 186
+      "lodging": 186,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MD",
+      "city": "Cambridge / St. Michaels",
+      "mie": 80,
+      "lodging": 145,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "MD",
+      "city": "Cambridge / St. Michaels",
+      "mie": 80,
+      "lodging": 145,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MD",
       "city": "Centreville",
       "mie": 74,
-      "lodging": 154
+      "lodging": 154,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MD",
+      "city": "Centreville",
+      "mie": 74,
+      "lodging": 121,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "MD",
+      "city": "Centreville",
+      "mie": 74,
+      "lodging": 154,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "MD",
       "city": "Columbia",
       "mie": 86,
-      "lodging": 113
+      "lodging": 113,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MD",
       "city": "Ocean City",
       "mie": 80,
-      "lodging": 295
+      "lodging": 295,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MD",
+      "city": "Ocean City",
+      "mie": 80,
+      "lodging": 115,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "MD",
+      "city": "Ocean City",
+      "mie": 80,
+      "lodging": 115,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "ME",
       "city": "Bar Harbor / Rockport",
       "mie": 92,
-      "lodging": 304
+      "lodging": 304,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "ME",
+      "city": "Bar Harbor / Rockport",
+      "mie": 92,
+      "lodging": 209,
+      "seasonBegin": "May 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "ME",
+      "city": "Bar Harbor / Rockport",
+      "mie": 92,
+      "lodging": 128,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "ME",
+      "city": "Bar Harbor / Rockport",
+      "mie": 92,
+      "lodging": 264,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "ME",
+      "city": "Bar Harbor / Rockport",
+      "mie": 92,
+      "lodging": 264,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "ME",
       "city": "Kennebunk / Kittery / Sanford",
       "mie": 86,
-      "lodging": 201
+      "lodging": 201,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "ME",
+      "city": "Kennebunk / Kittery / Sanford",
+      "mie": 86,
+      "lodging": 119,
+      "seasonBegin": "November 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "ME",
+      "city": "Kennebunk / Kittery / Sanford",
+      "mie": 86,
+      "lodging": 153,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "ME",
+      "city": "Kennebunk / Kittery / Sanford",
+      "mie": 86,
+      "lodging": 153,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "ME",
       "city": "Portland",
       "mie": 80,
-      "lodging": 211
+      "lodging": 211,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "ME",
+      "city": "Portland",
+      "mie": 80,
+      "lodging": 114,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "ME",
+      "city": "Portland",
+      "mie": 80,
+      "lodging": 199,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "ME",
+      "city": "Portland",
+      "mie": 80,
+      "lodging": 199,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Ann Arbor",
       "mie": 80,
-      "lodging": 146
+      "lodging": 146,
+      "seasonBegin": "April 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "Ann Arbor",
+      "mie": 80,
+      "lodging": 125,
+      "seasonBegin": "October 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "MI",
+      "city": "Ann Arbor",
+      "mie": 80,
+      "lodging": 125,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Detroit",
       "mie": 74,
-      "lodging": 152
+      "lodging": 152,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MI",
       "city": "Grand Rapids",
       "mie": 80,
-      "lodging": 119
+      "lodging": 119,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MI",
       "city": "Holland",
       "mie": 74,
-      "lodging": 157
+      "lodging": 157,
+      "seasonBegin": "May 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "Holland",
+      "mie": 74,
+      "lodging": 116,
+      "seasonBegin": "October 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "MI",
+      "city": "Holland",
+      "mie": 74,
+      "lodging": 116,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Mackinac Island",
       "mie": 86,
-      "lodging": 195
+      "lodging": 195,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "Mackinac Island",
+      "mie": 86,
+      "lodging": 120,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "MI",
+      "city": "Mackinac Island",
+      "mie": 86,
+      "lodging": 120,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Midland",
       "mie": 74,
-      "lodging": 120
+      "lodging": 120,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MI",
       "city": "Muskegon",
       "mie": 68,
-      "lodging": 149
+      "lodging": 149,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "Muskegon",
+      "mie": 68,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "MI",
+      "city": "Muskegon",
+      "mie": 68,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Petoskey",
       "mie": 86,
-      "lodging": 220
+      "lodging": 220,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "Petoskey",
+      "mie": 86,
+      "lodging": 116,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "MI",
+      "city": "Petoskey",
+      "mie": 86,
+      "lodging": 171,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "MI",
+      "city": "Petoskey",
+      "mie": 86,
+      "lodging": 171,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Pontiac / Auburn Hills",
       "mie": 80,
-      "lodging": 116
+      "lodging": 116,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MI",
       "city": "South Haven",
       "mie": 68,
-      "lodging": 142
+      "lodging": 142,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "South Haven",
+      "mie": 68,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "MI",
+      "city": "South Haven",
+      "mie": 68,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MI",
       "city": "Traverse City",
       "mie": 80,
-      "lodging": 235
+      "lodging": 235,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "MI",
+      "city": "Traverse City",
+      "mie": 80,
+      "lodging": 134,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "MI",
+      "city": "Traverse City",
+      "mie": 80,
+      "lodging": 134,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "MN",
       "city": "Duluth",
       "mie": 86,
-      "lodging": 220
+      "lodging": 220,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MN",
+      "city": "Duluth",
+      "mie": 86,
+      "lodging": 159,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "MN",
+      "city": "Duluth",
+      "mie": 86,
+      "lodging": 220,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "MN",
       "city": "Minneapolis / St. Paul",
       "mie": 92,
-      "lodging": 148
+      "lodging": 148,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MN",
       "city": "Rochester",
       "mie": 80,
-      "lodging": 127
+      "lodging": 127,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MO",
       "city": "Kansas City",
       "mie": 80,
-      "lodging": 135
+      "lodging": 135,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MO",
       "city": "St. Louis",
       "mie": 86,
-      "lodging": 150
+      "lodging": 150,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MS",
       "city": "Oxford",
       "mie": 68,
-      "lodging": 127
+      "lodging": 127,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MS",
       "city": "Southaven",
       "mie": 68,
-      "lodging": 126
+      "lodging": 126,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MS",
       "city": "Starkville",
       "mie": 68,
-      "lodging": 125
+      "lodging": 125,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MT",
       "city": "Big Sky / West Yellowstone/Gardiner",
       "mie": 80,
-      "lodging": 310
+      "lodging": 310,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MT",
+      "city": "Big Sky / West Yellowstone/Gardiner",
+      "mie": 80,
+      "lodging": 176,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "MT",
       "city": "Helena",
       "mie": 74,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "MT",
       "city": "Kalispell/Whitefish",
       "mie": 80,
-      "lodging": 232
+      "lodging": 232,
+      "seasonBegin": "July 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MT",
+      "city": "Kalispell/Whitefish",
+      "mie": 80,
+      "lodging": 124,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
     },
     {
       "state": "MT",
       "city": "Missoula",
       "mie": 74,
-      "lodging": 195
+      "lodging": 195,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "MT",
+      "city": "Missoula",
+      "mie": 74,
+      "lodging": 130,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "NC",
       "city": "Asheville",
       "mie": 80,
-      "lodging": 141
+      "lodging": 120,
+      "seasonBegin": "January 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NC",
+      "city": "Asheville",
+      "mie": 80,
+      "lodging": 141,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "NC",
       "city": "Atlantic Beach / Morehead City",
       "mie": 74,
-      "lodging": 178
+      "lodging": 178,
+      "seasonBegin": "May 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NC",
+      "city": "Atlantic Beach / Morehead City",
+      "mie": 74,
+      "lodging": 123,
+      "seasonBegin": "October 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "NC",
+      "city": "Atlantic Beach / Morehead City",
+      "mie": 74,
+      "lodging": 123,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NC",
       "city": "Chapel Hill",
       "mie": 80,
-      "lodging": 140
+      "lodging": 140,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NC",
       "city": "Charlotte",
       "mie": 80,
-      "lodging": 131
+      "lodging": 131,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NC",
       "city": "Durham",
       "mie": 74,
-      "lodging": 121
+      "lodging": 121,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NC",
       "city": "Fayetteville",
       "mie": 68,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NC",
       "city": "Greensboro",
       "mie": 74,
-      "lodging": 123
+      "lodging": 123,
+      "seasonBegin": "March 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NC",
+      "city": "Greensboro",
+      "mie": 74,
+      "lodging": 112,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "NC",
+      "city": "Greensboro",
+      "mie": 74,
+      "lodging": 123,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "NC",
       "city": "Kill Devil Hills",
       "mie": 74,
-      "lodging": 254
+      "lodging": 190,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "NC",
+      "city": "Kill Devil Hills",
+      "mie": 74,
+      "lodging": 254,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NC",
+      "city": "Kill Devil Hills",
+      "mie": 74,
+      "lodging": 133,
+      "seasonBegin": "October 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "NC",
+      "city": "Kill Devil Hills",
+      "mie": 74,
+      "lodging": 133,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NC",
       "city": "Raleigh",
       "mie": 74,
-      "lodging": 131
+      "lodging": 131,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NC",
       "city": "Wilmington",
       "mie": 74,
-      "lodging": 147
+      "lodging": 147,
+      "seasonBegin": "March 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NC",
+      "city": "Wilmington",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "NC",
+      "city": "Wilmington",
+      "mie": 74,
+      "lodging": 147,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "NE",
       "city": "Omaha",
       "mie": 80,
-      "lodging": 122
+      "lodging": 122,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NH",
       "city": "Concord",
       "mie": 74,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NH",
       "city": "Conway",
       "mie": 80,
-      "lodging": 161
+      "lodging": 161,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NH",
+      "city": "Conway",
+      "mie": 80,
+      "lodging": 118,
+      "seasonBegin": "March 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NH",
+      "city": "Conway",
+      "mie": 80,
+      "lodging": 144,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "NH",
+      "city": "Conway",
+      "mie": 80,
+      "lodging": 144,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NH",
       "city": "Durham",
       "mie": 74,
-      "lodging": 152
+      "lodging": 152,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NH",
+      "city": "Durham",
+      "mie": 74,
+      "lodging": 125,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NH",
+      "city": "Durham",
+      "mie": 74,
+      "lodging": 125,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NH",
       "city": "Laconia",
       "mie": 74,
-      "lodging": 182
+      "lodging": 182,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NH",
+      "city": "Laconia",
+      "mie": 74,
+      "lodging": 140,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "NH",
+      "city": "Laconia",
+      "mie": 74,
+      "lodging": 182,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "NH",
       "city": "Lebanon / Lincoln / West Lebanon",
       "mie": 74,
-      "lodging": 177
+      "lodging": 177,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NH",
+      "city": "Lebanon / Lincoln / West Lebanon",
+      "mie": 74,
+      "lodging": 142,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "NH",
+      "city": "Lebanon / Lincoln / West Lebanon",
+      "mie": 74,
+      "lodging": 177,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "NH",
       "city": "Manchester",
       "mie": 74,
-      "lodging": 130
+      "lodging": 130,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NH",
       "city": "Portsmouth",
       "mie": 74,
-      "lodging": 192
+      "lodging": 192,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NH",
+      "city": "Portsmouth",
+      "mie": 74,
+      "lodging": 129,
+      "seasonBegin": "November 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NH",
+      "city": "Portsmouth",
+      "mie": 74,
+      "lodging": 171,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "NH",
+      "city": "Portsmouth",
+      "mie": 74,
+      "lodging": 171,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NJ",
       "city": "Cherry Hill / Moorestown",
       "mie": 80,
-      "lodging": 112
+      "lodging": 112,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Eatontown / Freehold",
       "mie": 86,
-      "lodging": 146
+      "lodging": 146,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Edison / Piscataway",
       "mie": 80,
-      "lodging": 122
+      "lodging": 122,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Flemington",
       "mie": 80,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Newark",
       "mie": 86,
-      "lodging": 156
+      "lodging": 156,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Parsippany",
       "mie": 80,
-      "lodging": 143
+      "lodging": 143,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Princeton / Trenton",
       "mie": 86,
-      "lodging": 138
+      "lodging": 138,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Somerset",
       "mie": 80,
-      "lodging": 138
+      "lodging": 138,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Springfield / Cranford / New Providence",
       "mie": 80,
-      "lodging": 139
+      "lodging": 139,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NJ",
       "city": "Toms River",
       "mie": 74,
-      "lodging": 213
+      "lodging": 213,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NJ",
+      "city": "Toms River",
+      "mie": 74,
+      "lodging": 166,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NJ",
+      "city": "Toms River",
+      "mie": 74,
+      "lodging": 166,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NM",
       "city": "Albuquerque",
       "mie": 80,
-      "lodging": 144
+      "lodging": 144,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NM",
       "city": "Carlsbad",
       "mie": 74,
-      "lodging": 155
+      "lodging": 155,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NM",
       "city": "Santa Fe",
       "mie": 80,
-      "lodging": 167
+      "lodging": 122,
+      "seasonBegin": "January 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "NM",
+      "city": "Santa Fe",
+      "mie": 80,
+      "lodging": 167,
+      "seasonBegin": "March 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NM",
+      "city": "Santa Fe",
+      "mie": 80,
+      "lodging": 142,
+      "seasonBegin": "November 1",
+      "seasonEnd": "December 31"
+    },
+    {
+      "state": "NM",
+      "city": "Santa Fe",
+      "mie": 80,
+      "lodging": 167,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "NM",
       "city": "Taos",
       "mie": 74,
-      "lodging": 128
+      "lodging": 128,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NV",
       "city": "Incline Village / Reno / Sparks",
       "mie": 80,
-      "lodging": 184
+      "lodging": 184,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NV",
+      "city": "Incline Village / Reno / Sparks",
+      "mie": 80,
+      "lodging": 138,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NV",
+      "city": "Incline Village / Reno / Sparks",
+      "mie": 80,
+      "lodging": 138,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NV",
       "city": "Las Vegas",
       "mie": 86,
-      "lodging": 159
+      "lodging": 126,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "NV",
+      "city": "Las Vegas",
+      "mie": 86,
+      "lodging": 159,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "NV",
+      "city": "Las Vegas",
+      "mie": 86,
+      "lodging": 126,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "NY",
       "city": "Albany",
       "mie": 86,
-      "lodging": 117
+      "lodging": 117,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Binghamton",
       "mie": 74,
-      "lodging": 117
+      "lodging": 117,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Buffalo",
       "mie": 80,
-      "lodging": 139
+      "lodging": 139,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NY",
+      "city": "Buffalo",
+      "mie": 80,
+      "lodging": 126,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NY",
+      "city": "Buffalo",
+      "mie": 80,
+      "lodging": 126,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NY",
       "city": "Floral Park / Garden City / Great Neck",
       "mie": 86,
-      "lodging": 164
+      "lodging": 164,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Glens Falls",
       "mie": 86,
-      "lodging": 186
+      "lodging": 186,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NY",
+      "city": "Glens Falls",
+      "mie": 86,
+      "lodging": 117,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NY",
+      "city": "Glens Falls",
+      "mie": 86,
+      "lodging": 117,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NY",
       "city": "Ithaca",
       "mie": 80,
-      "lodging": 144
+      "lodging": 144,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Kingston",
       "mie": 86,
-      "lodging": 139
+      "lodging": 139,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Lake Placid",
       "mie": 86,
-      "lodging": 238
+      "lodging": 238,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NY",
+      "city": "Lake Placid",
+      "mie": 86,
+      "lodging": 144,
+      "seasonBegin": "March 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NY",
+      "city": "Lake Placid",
+      "mie": 86,
+      "lodging": 165,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "NY",
+      "city": "Lake Placid",
+      "mie": 86,
+      "lodging": 165,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NY",
       "city": "New York City",
       "mie": 92,
-      "lodging": 342
+      "lodging": 179,
+      "seasonBegin": "January 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "NY",
+      "city": "New York City",
+      "mie": 92,
+      "lodging": 237,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NY",
+      "city": "New York City",
+      "mie": 92,
+      "lodging": 281,
+      "seasonBegin": "March 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NY",
+      "city": "New York City",
+      "mie": 92,
+      "lodging": 342,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
+    },
+    {
+      "state": "NY",
+      "city": "New York City",
+      "mie": 92,
+      "lodging": 342,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NY",
       "city": "Niagara Falls",
       "mie": 80,
-      "lodging": 142
+      "lodging": 142,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NY",
+      "city": "Niagara Falls",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "NY",
+      "city": "Niagara Falls",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NY",
       "city": "Nyack / Palisades",
       "mie": 80,
-      "lodging": 129
+      "lodging": 129,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Poughkeepsie",
       "mie": 80,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Riverhead / Ronkonkoma / Melville",
       "mie": 86,
-      "lodging": 155
+      "lodging": 155,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Rochester",
       "mie": 80,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Saratoga Springs / Schenectady",
       "mie": 80,
-      "lodging": 214
+      "lodging": 214,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "NY",
+      "city": "Saratoga Springs / Schenectady",
+      "mie": 80,
+      "lodging": 126,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "NY",
+      "city": "Saratoga Springs / Schenectady",
+      "mie": 80,
+      "lodging": 126,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "NY",
       "city": "Syracuse / Oswego",
       "mie": 80,
-      "lodging": 122
+      "lodging": 122,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Tarrytown / White Plains / New Rochelle",
       "mie": 92,
-      "lodging": 161
+      "lodging": 161,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "Troy",
       "mie": 80,
-      "lodging": 121
+      "lodging": 121,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "NY",
       "city": "West Point",
       "mie": 80,
-      "lodging": 123
+      "lodging": 123,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OH",
       "city": "Cincinnati",
       "mie": 86,
-      "lodging": 163
+      "lodging": 163,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OH",
       "city": "Cleveland",
       "mie": 80,
-      "lodging": 159
+      "lodging": 159,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OH",
       "city": "Columbus",
       "mie": 80,
-      "lodging": 131
+      "lodging": 131,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OH",
       "city": "Dayton / Fairborn",
       "mie": 74,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OH",
       "city": "Hamilton",
       "mie": 74,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OH",
       "city": "Sandusky",
       "mie": 68,
-      "lodging": 144
+      "lodging": 144,
+      "seasonBegin": "December 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "OH",
+      "city": "Sandusky",
+      "mie": 68,
+      "lodging": 116,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
+    },
+    {
+      "state": "OH",
+      "city": "Sandusky",
+      "mie": 68,
+      "lodging": 116,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "OK",
       "city": "Oklahoma City",
       "mie": 80,
-      "lodging": 116
+      "lodging": 116,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OR",
       "city": "Beaverton",
       "mie": 80,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OR",
       "city": "Bend",
       "mie": 86,
-      "lodging": 192
+      "lodging": 192,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "OR",
+      "city": "Bend",
+      "mie": 86,
+      "lodging": 125,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "OR",
+      "city": "Bend",
+      "mie": 86,
+      "lodging": 125,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "OR",
       "city": "Clackamas",
       "mie": 80,
-      "lodging": 136
+      "lodging": 136,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OR",
       "city": "Eugene / Florence",
       "mie": 80,
-      "lodging": 192
+      "lodging": 162,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "OR",
+      "city": "Eugene / Florence",
+      "mie": 80,
+      "lodging": 192,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "OR",
+      "city": "Eugene / Florence",
+      "mie": 80,
+      "lodging": 132,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "OR",
       "city": "Lincoln City",
       "mie": 92,
-      "lodging": 167
+      "lodging": 167,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "OR",
+      "city": "Lincoln City",
+      "mie": 92,
+      "lodging": 120,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "OR",
+      "city": "Lincoln City",
+      "mie": 92,
+      "lodging": 120,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "OR",
       "city": "Portland",
       "mie": 86,
-      "lodging": 155
+      "lodging": 155,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "OR",
       "city": "Seaside",
       "mie": 86,
-      "lodging": 236
+      "lodging": 236,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "OR",
+      "city": "Seaside",
+      "mie": 86,
+      "lodging": 141,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "OR",
+      "city": "Seaside",
+      "mie": 86,
+      "lodging": 141,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "PA",
       "city": "Allentown / Easton / Bethlehem",
       "mie": 74,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Bucks",
       "mie": 80,
-      "lodging": 119
+      "lodging": 119,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Chester / Radnor / Essington",
       "mie": 80,
-      "lodging": 127
+      "lodging": 127,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Gettysburg",
       "mie": 68,
-      "lodging": 122
+      "lodging": 122,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "PA",
+      "city": "Gettysburg",
+      "mie": 68,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "PA",
+      "city": "Gettysburg",
+      "mie": 68,
+      "lodging": 122,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "PA",
       "city": "Harrisburg",
       "mie": 74,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Hershey",
       "mie": 80,
-      "lodging": 196
+      "lodging": 196,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "PA",
+      "city": "Hershey",
+      "mie": 80,
+      "lodging": 145,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "PA",
+      "city": "Hershey",
+      "mie": 80,
+      "lodging": 145,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "PA",
       "city": "Lancaster",
       "mie": 74,
-      "lodging": 123
+      "lodging": 123,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Malvern / Frazer / Berwyn",
       "mie": 80,
-      "lodging": 118
+      "lodging": 118,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Montgomery",
       "mie": 80,
-      "lodging": 126
+      "lodging": 126,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Philadelphia",
       "mie": 92,
-      "lodging": 218
+      "lodging": 187,
+      "seasonBegin": "April 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "PA",
+      "city": "Philadelphia",
+      "mie": 92,
+      "lodging": 156,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "PA",
+      "city": "Philadelphia",
+      "mie": 92,
+      "lodging": 218,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
+    },
+    {
+      "state": "PA",
+      "city": "Philadelphia",
+      "mie": 92,
+      "lodging": 218,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "PA",
       "city": "Pittsburgh",
       "mie": 80,
-      "lodging": 138
+      "lodging": 138,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "Reading",
       "mie": 74,
-      "lodging": 117
+      "lodging": 117,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "PA",
       "city": "State College",
       "mie": 74,
-      "lodging": 124
+      "lodging": 124,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "RI",
       "city": "Jamestown / Middletown / Newport",
       "mie": 80,
-      "lodging": 268
+      "lodging": 268,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "RI",
+      "city": "Jamestown / Middletown / Newport",
+      "mie": 80,
+      "lodging": 141,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "RI",
+      "city": "Jamestown / Middletown / Newport",
+      "mie": 80,
+      "lodging": 218,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "RI",
+      "city": "Jamestown / Middletown / Newport",
+      "mie": 80,
+      "lodging": 218,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "RI",
       "city": "Providence / Bristol",
       "mie": 80,
-      "lodging": 154
+      "lodging": 154,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "SC",
       "city": "Charleston",
       "mie": 92,
-      "lodging": 288
+      "lodging": 244,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "SC",
+      "city": "Charleston",
+      "mie": 92,
+      "lodging": 288,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "SC",
+      "city": "Charleston",
+      "mie": 92,
+      "lodging": 218,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "SC",
+      "city": "Charleston",
+      "mie": 92,
+      "lodging": 244,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "SC",
       "city": "Columbia",
       "mie": 74,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "SC",
       "city": "Hilton Head",
       "mie": 80,
-      "lodging": 215
+      "lodging": 215,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "SC",
+      "city": "Hilton Head",
+      "mie": 80,
+      "lodging": 193,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "SC",
+      "city": "Hilton Head",
+      "mie": 80,
+      "lodging": 118,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "SC",
+      "city": "Hilton Head",
+      "mie": 80,
+      "lodging": 163,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "SC",
+      "city": "Hilton Head",
+      "mie": 80,
+      "lodging": 163,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "SC",
       "city": "Myrtle Beach",
       "mie": 74,
-      "lodging": 182
+      "lodging": 132,
+      "seasonBegin": "April 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "SC",
+      "city": "Myrtle Beach",
+      "mie": 74,
+      "lodging": 182,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "SC",
+      "city": "Myrtle Beach",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "SC",
+      "city": "Myrtle Beach",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "SD",
       "city": "Deadwood / Spearfish",
       "mie": 80,
-      "lodging": 140
+      "lodging": 140,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "SD",
+      "city": "Deadwood / Spearfish",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "SD",
+      "city": "Deadwood / Spearfish",
+      "mie": 80,
+      "lodging": 140,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "SD",
       "city": "Hot Springs",
       "mie": 74,
-      "lodging": 161
+      "lodging": 161,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "SD",
+      "city": "Hot Springs",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "SD",
       "city": "Rapid City",
       "mie": 74,
-      "lodging": 158
+      "lodging": 158,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "SD",
+      "city": "Rapid City",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "SD",
+      "city": "Rapid City",
+      "mie": 74,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "TN",
       "city": "Brentwood / Franklin",
       "mie": 86,
-      "lodging": 130
+      "lodging": 130,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TN",
       "city": "Chattanooga",
       "mie": 74,
-      "lodging": 117
+      "lodging": 117,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TN",
       "city": "Knoxville",
       "mie": 74,
-      "lodging": 119
+      "lodging": 119,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TN",
       "city": "Memphis",
       "mie": 74,
-      "lodging": 129
+      "lodging": 129,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TN",
       "city": "Nashville",
       "mie": 86,
-      "lodging": 248
+      "lodging": 217,
+      "seasonBegin": "November 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "TN",
+      "city": "Nashville",
+      "mie": 86,
+      "lodging": 248,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "TN",
+      "city": "Nashville",
+      "mie": 86,
+      "lodging": 248,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "TX",
       "city": "Arlington / Fort Worth / Grapevine",
       "mie": 80,
-      "lodging": 181
+      "lodging": 181,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TX",
       "city": "Austin",
       "mie": 80,
-      "lodging": 187
+      "lodging": 173,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "TX",
+      "city": "Austin",
+      "mie": 80,
+      "lodging": 187,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "TX",
+      "city": "Austin",
+      "mie": 80,
+      "lodging": 173,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "TX",
       "city": "Big Spring",
       "mie": 68,
-      "lodging": 114
+      "lodging": 114,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TX",
       "city": "Dallas",
       "mie": 80,
-      "lodging": 191
+      "lodging": 170,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "TX",
+      "city": "Dallas",
+      "mie": 80,
+      "lodging": 191,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "TX",
+      "city": "Dallas",
+      "mie": 80,
+      "lodging": 170,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
     },
     {
       "state": "TX",
       "city": "Galveston",
       "mie": 74,
-      "lodging": 146
+      "lodging": 111,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "TX",
+      "city": "Galveston",
+      "mie": 74,
+      "lodging": 146,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "TX",
+      "city": "Galveston",
+      "mie": 74,
+      "lodging": 111,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "TX",
       "city": "Houston",
       "mie": 80,
-      "lodging": 128
+      "lodging": 128,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TX",
       "city": "Midland / Odessa",
       "mie": 74,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "February 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "TX",
+      "city": "Midland / Odessa",
+      "mie": 74,
+      "lodging": 118,
+      "seasonBegin": "November 1",
+      "seasonEnd": "January 31"
+    },
+    {
+      "state": "TX",
+      "city": "Midland / Odessa",
+      "mie": 74,
+      "lodging": 132,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "TX",
       "city": "Pecos",
       "mie": 74,
-      "lodging": 121
+      "lodging": 121,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TX",
       "city": "Plano",
       "mie": 80,
-      "lodging": 123
+      "lodging": 123,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "TX",
       "city": "San Antonio",
       "mie": 74,
-      "lodging": 161
+      "lodging": 137,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "TX",
+      "city": "San Antonio",
+      "mie": 74,
+      "lodging": 161,
+      "seasonBegin": "February 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "TX",
+      "city": "San Antonio",
+      "mie": 74,
+      "lodging": 137,
+      "seasonBegin": "October 1",
+      "seasonEnd": "January 31"
     },
     {
       "state": "TX",
       "city": "South Padre Island",
       "mie": 74,
-      "lodging": 140
+      "lodging": 118,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "TX",
+      "city": "South Padre Island",
+      "mie": 74,
+      "lodging": 140,
+      "seasonBegin": "March 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "TX",
+      "city": "South Padre Island",
+      "mie": 74,
+      "lodging": 118,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "UT",
       "city": "Moab",
       "mie": 86,
-      "lodging": 221
+      "lodging": 166,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "UT",
+      "city": "Moab",
+      "mie": 86,
+      "lodging": 212,
+      "seasonBegin": "March 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "UT",
+      "city": "Moab",
+      "mie": 86,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "February 28"
+    },
+    {
+      "state": "UT",
+      "city": "Moab",
+      "mie": 86,
+      "lodging": 221,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
+    },
+    {
+      "state": "UT",
+      "city": "Moab",
+      "mie": 86,
+      "lodging": 221,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "UT",
       "city": "Park City",
       "mie": 92,
-      "lodging": 483
+      "lodging": 221,
+      "seasonBegin": "April 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "UT",
+      "city": "Park City",
+      "mie": 92,
+      "lodging": 483,
+      "seasonBegin": "December 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "UT",
+      "city": "Park City",
+      "mie": 92,
+      "lodging": 221,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
     },
     {
       "state": "UT",
       "city": "Provo",
       "mie": 74,
-      "lodging": 117
+      "lodging": 117,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "UT",
       "city": "Salt Lake City",
       "mie": 80,
-      "lodging": 142
+      "lodging": 142,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "VA",
       "city": "Blacksburg",
       "mie": 68,
-      "lodging": 122
+      "lodging": 122,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "VA",
       "city": "Charlottesville",
       "mie": 80,
-      "lodging": 136
+      "lodging": 136,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "VA",
       "city": "Loudoun",
       "mie": 80,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "VA",
       "city": "Lynchburg",
       "mie": 68,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "VA",
+      "city": "Lynchburg",
+      "mie": 68,
+      "lodging": 110,
+      "seasonBegin": "June 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "VA",
+      "city": "Lynchburg",
+      "mie": 68,
+      "lodging": 115,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "VA",
       "city": "Richmond",
       "mie": 80,
-      "lodging": 157
+      "lodging": 157,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "VA",
       "city": "Roanoke",
       "mie": 74,
-      "lodging": 119
+      "lodging": 119,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "VA",
       "city": "Virginia Beach",
       "mie": 74,
-      "lodging": 210
+      "lodging": 210,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "VA",
+      "city": "Virginia Beach",
+      "mie": 74,
+      "lodging": 124,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "VA",
+      "city": "Virginia Beach",
+      "mie": 74,
+      "lodging": 124,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "VA",
       "city": "Wallops Island",
       "mie": 68,
-      "lodging": 248
+      "lodging": 248,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "VA",
+      "city": "Wallops Island",
+      "mie": 68,
+      "lodging": 131,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "VA",
+      "city": "Wallops Island",
+      "mie": 68,
+      "lodging": 131,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "VA",
       "city": "Williamsburg / York",
       "mie": 80,
-      "lodging": 134
+      "lodging": 134,
+      "seasonBegin": "April 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "VA",
+      "city": "Williamsburg / York",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "January 1",
+      "seasonEnd": "March 31"
+    },
+    {
+      "state": "VA",
+      "city": "Williamsburg / York",
+      "mie": 80,
+      "lodging": 115,
+      "seasonBegin": "October 1",
+      "seasonEnd": "December 31"
+    },
+    {
+      "state": "VA",
+      "city": "Williamsburg / York",
+      "mie": 80,
+      "lodging": 115,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "VT",
       "city": "Burlington",
       "mie": 86,
-      "lodging": 202
+      "lodging": 202,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "VT",
+      "city": "Burlington",
+      "mie": 86,
+      "lodging": 128,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "VT",
+      "city": "Burlington",
+      "mie": 86,
+      "lodging": 202,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "VT",
       "city": "Manchester",
       "mie": 86,
-      "lodging": 220
+      "lodging": 220,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "VT",
+      "city": "Manchester",
+      "mie": 86,
+      "lodging": 168,
+      "seasonBegin": "November 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "VT",
+      "city": "Manchester",
+      "mie": 86,
+      "lodging": 220,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "VT",
       "city": "Montpelier",
       "mie": 74,
-      "lodging": 227
+      "lodging": 227,
+      "seasonBegin": "August 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "VT",
+      "city": "Montpelier",
+      "mie": 74,
+      "lodging": 167,
+      "seasonBegin": "November 1",
+      "seasonEnd": "July 31"
+    },
+    {
+      "state": "VT",
+      "city": "Montpelier",
+      "mie": 74,
+      "lodging": 227,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "VT",
       "city": "Stowe",
       "mie": 86,
-      "lodging": 185
+      "lodging": 185,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "VT",
+      "city": "Stowe",
+      "mie": 86,
+      "lodging": 148,
+      "seasonBegin": "March 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "VT",
+      "city": "Stowe",
+      "mie": 86,
+      "lodging": 185,
+      "seasonBegin": "October 1",
+      "seasonEnd": "February 28"
     },
     {
       "state": "VT",
       "city": "White River Junction",
       "mie": 86,
-      "lodging": 144
+      "lodging": 144,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WA",
       "city": "Everett / Lynnwood",
       "mie": 86,
-      "lodging": 140
+      "lodging": 140,
+      "seasonBegin": "June 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "WA",
+      "city": "Everett / Lynnwood",
+      "mie": 86,
+      "lodging": 113,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "WA",
+      "city": "Everett / Lynnwood",
+      "mie": 86,
+      "lodging": 113,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "WA",
       "city": "Ocean Shores",
       "mie": 86,
-      "lodging": 132
+      "lodging": 132,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "WA",
+      "city": "Ocean Shores",
+      "mie": 86,
+      "lodging": 110,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "WA",
+      "city": "Ocean Shores",
+      "mie": 86,
+      "lodging": 110,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "WA",
       "city": "Olympia / Tumwater",
       "mie": 80,
-      "lodging": 175
+      "lodging": 151,
+      "seasonBegin": "December 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "WA",
+      "city": "Olympia / Tumwater",
+      "mie": 80,
+      "lodging": 175,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "WA",
+      "city": "Olympia / Tumwater",
+      "mie": 80,
+      "lodging": 128,
+      "seasonBegin": "October 1",
+      "seasonEnd": "November 30"
+    },
+    {
+      "state": "WA",
+      "city": "Olympia / Tumwater",
+      "mie": 80,
+      "lodging": 128,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "WA",
       "city": "Port Angeles / Port Townsend",
       "mie": 92,
-      "lodging": 235
+      "lodging": 235,
+      "seasonBegin": "July 1",
+      "seasonEnd": "August 31"
+    },
+    {
+      "state": "WA",
+      "city": "Port Angeles / Port Townsend",
+      "mie": 92,
+      "lodging": 137,
+      "seasonBegin": "October 1",
+      "seasonEnd": "June 30"
+    },
+    {
+      "state": "WA",
+      "city": "Port Angeles / Port Townsend",
+      "mie": 92,
+      "lodging": 137,
+      "seasonBegin": "September 1",
+      "seasonEnd": "September 30"
     },
     {
       "state": "WA",
       "city": "Richland / Pasco",
       "mie": 86,
-      "lodging": 130
+      "lodging": 130,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WA",
       "city": "Seattle",
       "mie": 92,
-      "lodging": 248
+      "lodging": 248,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "WA",
+      "city": "Seattle",
+      "mie": 92,
+      "lodging": 188,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "WA",
       "city": "Spokane",
       "mie": 86,
-      "lodging": 126
+      "lodging": 126,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WA",
       "city": "Tacoma",
       "mie": 86,
-      "lodging": 136
+      "lodging": 136,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WA",
       "city": "Vancouver",
       "mie": 86,
-      "lodging": 155
+      "lodging": 155,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WI",
       "city": "Madison",
       "mie": 80,
-      "lodging": 138
+      "lodging": 138,
+      "seasonBegin": "May 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "WI",
+      "city": "Madison",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "April 30"
+    },
+    {
+      "state": "WI",
+      "city": "Madison",
+      "mie": 80,
+      "lodging": 138,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "WI",
       "city": "Milwaukee",
       "mie": 80,
-      "lodging": 140
+      "lodging": 140,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WI",
       "city": "Sturgeon Bay",
       "mie": 80,
-      "lodging": 133
+      "lodging": 133,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "WI",
+      "city": "Sturgeon Bay",
+      "mie": 80,
+      "lodging": 110,
+      "seasonBegin": "November 1",
+      "seasonEnd": "May 31"
+    },
+    {
+      "state": "WI",
+      "city": "Sturgeon Bay",
+      "mie": 80,
+      "lodging": 133,
+      "seasonBegin": "October 1",
+      "seasonEnd": "October 31"
     },
     {
       "state": "WV",
       "city": "Charles Town",
       "mie": 68,
-      "lodging": 122
+      "lodging": 122,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WV",
       "city": "Charleston",
       "mie": 68,
-      "lodging": 115
+      "lodging": 115,
+      "seasonBegin": "",
+      "seasonEnd": ""
     },
     {
       "state": "WY",
       "city": "Cody",
       "mie": 74,
-      "lodging": 190
+      "lodging": 190,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "WY",
+      "city": "Cody",
+      "mie": 74,
+      "lodging": 127,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     },
     {
       "state": "WY",
       "city": "Jackson / Pinedale",
       "mie": 92,
-      "lodging": 420
+      "lodging": 420,
+      "seasonBegin": "June 1",
+      "seasonEnd": "September 30"
+    },
+    {
+      "state": "WY",
+      "city": "Jackson / Pinedale",
+      "mie": 92,
+      "lodging": 212,
+      "seasonBegin": "October 1",
+      "seasonEnd": "May 31"
     }
   ]
 }

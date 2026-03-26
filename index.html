@@ -349,7 +349,7 @@
 
   <!-- Version footer -->
   <div style="text-align:center;padding:16px 0;font-size:0.75rem;color:var(--cmu-gray);border-top:1px solid var(--border);margin-top:10px;">
-    v1.3 | FY2026 Rates | Domestic: 296 GSA locations | International: 1,034 locations (228 countries) |
+    v1.4 | FY2026 Rates (seasonal) | Domestic: 296 locations | International: 1,034 locations (228 countries) |
     <a href="https://github.com/qsibtain/business-travel-expense" target="_blank" style="color:var(--cmu-gray);">GitHub</a>
   </div>
 
@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   try {
-    const cacheBust = `?v=1.3`;
+    const cacheBust = `?v=1.4`;
     const [domResp, intlResp] = await Promise.all([
       fetch('data/domestic-rates.json' + cacheBust),
       fetch('data/international-rates.json' + cacheBust)
@@ -405,9 +405,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const domData = await domResp.json();
     const intlData = await intlResp.json();
 
-    // Load domestic rates
+    // Load domestic rates (with seasonal data)
     STANDARD_RATE = domData.metadata.standardRate || {m: 68, l: 110};
-    domesticRates = domData.rates.map(r => ({s: r.state, c: r.city, m: r.mie, l: r.lodging}));
+    domesticRates = domData.rates.map(r => ({
+      s: r.state, c: r.city, m: r.mie, l: r.lodging,
+      sb: r.seasonBegin || '', se: r.seasonEnd || ''
+    }));
 
     // Build MIE breakdown table from JSON
     mieBreakdownTable = {};
@@ -415,8 +418,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       mieBreakdownTable[t.total] = {breakfast: t.breakfast, lunch: t.lunch, dinner: t.dinner, incidentals: t.incidentals};
     });
 
-    // Load international rates
-    internationalRates = intlData.rates.map(r => ({c: r.country, p: r.post, m: r.mie, l: r.lodging}));
+    // Load international rates (with seasonal data)
+    internationalRates = intlData.rates.map(r => ({
+      c: r.country, p: r.post, m: r.mie, l: r.lodging,
+      sb: r.seasonBegin || '', se: r.seasonEnd || ''
+    }));
 
     // Build OCONUS M&IE breakdown table (exact GSA lookup, $1-$265)
     oconusMieBreakdown = {};
@@ -582,23 +588,25 @@ function onStateChange(id) {
     return;
   }
 
-  // Filter embedded rates for this state, add standard rate option
-  const stateCities = domesticRates.filter(r => r.s === state).sort((a, b) => a.c.localeCompare(b.c));
+  // Filter embedded rates for this state (may have multiple seasonal entries per city)
+  const stateCities = domesticRates.filter(r => r.s === state);
+  // Deduplicate city names for dropdown, show M&IE (same year-round for domestic)
+  const uniqueCities = [...new Map(stateCities.map(r => [r.c, r])).values()].sort((a, b) => a.c.localeCompare(b.c));
 
   citySel.innerHTML = '<option value="">Select city...</option>';
-  // Always include the standard CONUS rate as first option
   const stdOpt = document.createElement('option');
   stdOpt.value = '__STANDARD__';
   stdOpt.textContent = `All other ${US_STATES.find(s=>s[0]===state)?.[1]||state} locations ($${STANDARD_RATE.m} M&IE)`;
   citySel.appendChild(stdOpt);
 
-  stateCities.forEach(r => {
+  uniqueCities.forEach(r => {
     const opt = document.createElement('option');
     opt.value = r.c;
     opt.textContent = `${r.c} ($${r.m} M&IE)`;
     citySel.appendChild(opt);
   });
 
+  // Store ALL entries (including seasonal) for rate resolution
   seg.cityCache = stateCities;
 }
 
@@ -609,29 +617,23 @@ function onDomCityChange(id) {
   const state = document.getElementById(`seg_${id}_state`).value;
   if (!cityName) return;
 
-  let mie, lodging, dest;
   if (cityName === '__STANDARD__') {
-    mie = STANDARD_RATE.m;
-    lodging = STANDARD_RATE.l;
     const stateName = US_STATES.find(s => s[0] === state)?.[1] || state;
-    dest = `${stateName} (standard rate), ${state}`;
+    seg.destination = `${stateName} (standard rate), ${state}`;
+    seg.seasonalRates = [{m: STANDARD_RATE.m, l: STANDARD_RATE.l, sb: '', se: ''}];
   } else {
-    const cityData = (seg.cityCache || []).find(c => c.c === cityName);
-    if (!cityData) return;
-    mie = cityData.m;
-    lodging = cityData.l;
-    dest = `${cityName}, ${state}`;
+    seg.destination = `${cityName}, ${state}`;
+    // Store ALL seasonal entries for this city
+    seg.seasonalRates = (seg.cityCache || []).filter(c => c.c === cityName);
   }
 
-  seg.mie = mie;
-  seg.lodging = lodging;
-  seg.destination = dest;
-
-  // Resolve MIE breakdown from embedded table
-  seg.breakdown = mieBreakdownTable[mie];
+  // Use first entry as default display value
+  seg.mie = seg.seasonalRates[0].m;
+  seg.lodging = seg.seasonalRates[0].l;
+  seg.breakdown = mieBreakdownTable[seg.mie];
   if (!seg.breakdown) {
     const keys = Object.keys(mieBreakdownTable).map(Number).sort((a, b) => a - b);
-    const closest = keys.reduce((prev, curr) => Math.abs(curr - mie) < Math.abs(prev - mie) ? curr : prev);
+    const closest = keys.reduce((prev, curr) => Math.abs(curr - seg.mie) < Math.abs(prev - seg.mie) ? curr : prev);
     seg.breakdown = mieBreakdownTable[closest];
   }
 
@@ -669,13 +671,15 @@ function onIntlPostChange(id) {
   const post = document.getElementById(`seg_${id}_post`).value;
   if (!country || !post) return;
 
-  const entry = internationalRates.find(r => r.c === country && r.p === post);
-  if (!entry) return;
+  // Store ALL seasonal entries for this post
+  seg.seasonalRates = internationalRates.filter(r => r.c === country && r.p === post)
+    .map(r => ({m: r.m, l: r.l, sb: r.sb, se: r.se}));
+  if (seg.seasonalRates.length === 0) return;
 
-  seg.mie = entry.m;
-  seg.lodging = entry.l;
   seg.destination = `${post}, ${country}`;
-  seg.breakdown = getOconusBreakdown(entry.m);
+  seg.mie = seg.seasonalRates[0].m;
+  seg.lodging = seg.seasonalRates[0].l;
+  seg.breakdown = getOconusBreakdown(seg.mie);
 
   showSegRate(id, seg);
 }
@@ -747,12 +751,28 @@ function generateGrid() {
     const endD = new Date(seg.endDate + 'T00:00:00');
     const segDays = Math.round((endD - startD) / 86400000) + 1;
 
-    const breakdown = seg.breakdown || getOconusBreakdown(seg.mie);
-
     for (let i = 0; i < segDays; i++) {
       const d = new Date(startD);
       d.setDate(d.getDate() + i);
       const dateStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+      // Resolve seasonal rate for this specific day
+      const seasonalEntry = getSeasonalRate(seg.seasonalRates, d);
+      const dayMIE = seasonalEntry ? seasonalEntry.m : seg.mie;
+      const dayLodging = seasonalEntry ? seasonalEntry.l : seg.lodging;
+
+      // Get meal breakdown for this day's M&IE
+      let breakdown;
+      if (seg.type === 'domestic') {
+        breakdown = mieBreakdownTable[dayMIE];
+        if (!breakdown) {
+          const keys = Object.keys(mieBreakdownTable).map(Number).sort((a, b) => a - b);
+          const closest = keys.reduce((prev, curr) => Math.abs(curr - dayMIE) < Math.abs(prev - dayMIE) ? curr : prev);
+          breakdown = mieBreakdownTable[closest];
+        }
+      } else {
+        breakdown = getOconusBreakdown(dayMIE);
+      }
 
       // Transition day: last day of this segment that is also first day of next segment
       const isTransitOutgoing = (i === segDays - 1 && transitionDates.has(dateStr) && segIdx < sorted.length - 1);
@@ -787,11 +807,11 @@ function generateGrid() {
         isTransitOutgoing,
         isTransitIncoming,
         isExtended,
-        baseMIE: seg.mie,
-        lodging: seg.lodging,
+        baseMIE: dayMIE,
+        lodging: dayLodging,
         factor,
-        adjustedMIE: round(seg.mie * factor),
-        adjustedLodging: isFirstOrLast ? 0 : seg.lodging,
+        adjustedMIE: round(dayMIE * factor),
+        adjustedLodging: isFirstOrLast ? 0 : dayLodging,
         breakfast: round(breakdown.breakfast * factor),
         lunch: round(breakdown.lunch * factor),
         dinner: round(breakdown.dinner * factor),
@@ -1026,6 +1046,35 @@ function clearAllMeals() {
 // Helpers
 // ============================================================
 function round(n) { return Math.round(n * 100) / 100; }
+
+// Resolve the correct M&IE and lodging for a date based on seasonal entries
+// Season dates are like "01/01"-"06/30" (MM/DD without year)
+function getSeasonalRate(seasonalRates, date) {
+  if (!seasonalRates || seasonalRates.length <= 1) {
+    return seasonalRates?.[0] || null;
+  }
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const mmdd = month * 100 + day; // e.g., March 15 = 315, Dec 1 = 1201
+
+  for (const entry of seasonalRates) {
+    if (!entry.sb || !entry.se) return entry; // no season = year-round
+    const [sbM, sbD] = entry.sb.split('/').map(Number);
+    const [seM, seD] = entry.se.split('/').map(Number);
+    const sbVal = sbM * 100 + sbD;
+    const seVal = seM * 100 + seD;
+
+    if (sbVal <= seVal) {
+      // Normal range: e.g., 03/01 - 09/30
+      if (mmdd >= sbVal && mmdd <= seVal) return entry;
+    } else {
+      // Wraps around year end: e.g., 10/01 - 02/28
+      if (mmdd >= sbVal || mmdd <= seVal) return entry;
+    }
+  }
+  // Fallback to first entry
+  return seasonalRates[0];
+}
 
 function getOconusBreakdown(mie) {
   // Use exact GSA OCONUS lookup table ($1-$265)
