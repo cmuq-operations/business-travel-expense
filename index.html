@@ -349,7 +349,7 @@
 
   <!-- Version footer -->
   <div style="text-align:center;padding:16px 0;font-size:0.75rem;color:var(--cmu-gray);border-top:1px solid var(--border);margin-top:10px;">
-    v1.2 | FY2026 Rates | Domestic: 296 GSA locations | International: 1,034 locations (228 countries) |
+    v1.3 | FY2026 Rates | Domestic: 296 GSA locations | International: 1,034 locations (228 countries) |
     <a href="https://github.com/qsibtain/business-travel-expense" target="_blank" style="color:var(--cmu-gray);">GitHub</a>
   </div>
 
@@ -366,7 +366,8 @@ let segmentCounter = 0;
 
 // Loaded from JSON files on init
 let STANDARD_RATE = {m: 68, l: 110};
-let mieBreakdownTable = {};
+let mieBreakdownTable = {};       // CONUS: 5 tiers (keyed by M&IE total)
+let oconusMieBreakdown = {};      // OCONUS: 265 tiers (keyed by M&IE total, $1-$265)
 let domesticRates = [];
 let internationalRates = [];
 
@@ -415,6 +416,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load international rates
     internationalRates = intlData.rates.map(r => ({c: r.country, p: r.post, m: r.mie, l: r.lodging}));
+
+    // Build OCONUS M&IE breakdown table (exact GSA lookup, $1-$265)
+    oconusMieBreakdown = {};
+    (intlData.mieBreakdown || []).forEach(t => {
+      oconusMieBreakdown[t.total] = {breakfast: t.breakfast, lunch: t.lunch, dinner: t.dinner, incidentals: t.incidentals};
+    });
 
   } catch (e) {
     console.error('Error loading rate data:', e);
@@ -667,12 +674,7 @@ function onIntlPostChange(id) {
   seg.mie = entry.m;
   seg.lodging = entry.l;
   seg.destination = `${post}, ${country}`;
-  seg.breakdown = {
-    breakfast: round(entry.m * 0.15),
-    lunch: round(entry.m * 0.25),
-    dinner: round(entry.m * 0.40),
-    incidentals: round(entry.m * 0.20)
-  };
+  seg.breakdown = getOconusBreakdown(entry.m);
 
   showSegRate(id, seg);
 }
@@ -744,12 +746,7 @@ function generateGrid() {
     const endD = new Date(seg.endDate + 'T00:00:00');
     const segDays = Math.round((endD - startD) / 86400000) + 1;
 
-    const breakdown = seg.breakdown || {
-      breakfast: round(seg.mie * 0.15),
-      lunch: round(seg.mie * 0.25),
-      dinner: round(seg.mie * 0.40),
-      incidentals: round(seg.mie * 0.20)
-    };
+    const breakdown = seg.breakdown || getOconusBreakdown(seg.mie);
 
     for (let i = 0; i < segDays; i++) {
       const d = new Date(startD);
@@ -1028,6 +1025,18 @@ function clearAllMeals() {
 // Helpers
 // ============================================================
 function round(n) { return Math.round(n * 100) / 100; }
+
+function getOconusBreakdown(mie) {
+  // Use exact GSA OCONUS lookup table ($1-$265)
+  if (oconusMieBreakdown[mie]) return oconusMieBreakdown[mie];
+  // For rates > $265 or if table not loaded, use federal formula
+  return {
+    breakfast: round(mie * 0.15),
+    lunch: round(mie * 0.25),
+    dinner: round(mie * 0.40),
+    incidentals: round(mie * 0.20)
+  };
+}
 
 
 function showStatus(id, msg, type) {

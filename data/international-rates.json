@@ -4,7 +4,7 @@
     "effectiveDate": "2026-03-01",
     "lastUpdated": "2026-03-27",
     "updateUrl": "https://allowances.state.gov/web920/per_diem.asp",
-    "notes": "M&IE breakdown uses federal formula: Breakfast 15%, Lunch 25%, Dinner 40%, Incidentals 20%."
+    "notes": "M&IE breakdown from GSA OCONUS table (gsa.gov/travel/plan-book/per-diem-rates/mie-breakdown). For rates above $265, use formula: B=15%, L=25%, D=40%, I=20%."
   },
   "rates": [
     {
@@ -6210,6 +6210,1863 @@
       "post": "Victoria Falls",
       "mie": 115,
       "lodging": 363
+    }
+  ],
+  "mieBreakdown": [
+    {
+      "total": 1,
+      "breakfast": 0,
+      "lunch": 0,
+      "dinner": 0,
+      "incidentals": 1
+    },
+    {
+      "total": 2,
+      "breakfast": 0,
+      "lunch": 0,
+      "dinner": 1,
+      "incidentals": 1
+    },
+    {
+      "total": 3,
+      "breakfast": 0,
+      "lunch": 1,
+      "dinner": 1,
+      "incidentals": 1
+    },
+    {
+      "total": 4,
+      "breakfast": 1,
+      "lunch": 1,
+      "dinner": 1,
+      "incidentals": 1
+    },
+    {
+      "total": 5,
+      "breakfast": 1,
+      "lunch": 1,
+      "dinner": 2,
+      "incidentals": 1
+    },
+    {
+      "total": 6,
+      "breakfast": 1,
+      "lunch": 2,
+      "dinner": 2,
+      "incidentals": 1
+    },
+    {
+      "total": 7,
+      "breakfast": 1,
+      "lunch": 2,
+      "dinner": 3,
+      "incidentals": 1
+    },
+    {
+      "total": 8,
+      "breakfast": 1,
+      "lunch": 2,
+      "dinner": 3,
+      "incidentals": 2
+    },
+    {
+      "total": 9,
+      "breakfast": 1,
+      "lunch": 2,
+      "dinner": 4,
+      "incidentals": 2
+    },
+    {
+      "total": 10,
+      "breakfast": 2,
+      "lunch": 2,
+      "dinner": 4,
+      "incidentals": 2
+    },
+    {
+      "total": 11,
+      "breakfast": 2,
+      "lunch": 3,
+      "dinner": 4,
+      "incidentals": 2
+    },
+    {
+      "total": 12,
+      "breakfast": 2,
+      "lunch": 3,
+      "dinner": 5,
+      "incidentals": 2
+    },
+    {
+      "total": 13,
+      "breakfast": 2,
+      "lunch": 3,
+      "dinner": 5,
+      "incidentals": 3
+    },
+    {
+      "total": 14,
+      "breakfast": 2,
+      "lunch": 4,
+      "dinner": 5,
+      "incidentals": 3
+    },
+    {
+      "total": 15,
+      "breakfast": 2,
+      "lunch": 4,
+      "dinner": 6,
+      "incidentals": 3
+    },
+    {
+      "total": 16,
+      "breakfast": 2,
+      "lunch": 4,
+      "dinner": 7,
+      "incidentals": 3
+    },
+    {
+      "total": 17,
+      "breakfast": 3,
+      "lunch": 4,
+      "dinner": 7,
+      "incidentals": 3
+    },
+    {
+      "total": 18,
+      "breakfast": 3,
+      "lunch": 5,
+      "dinner": 7,
+      "incidentals": 3
+    },
+    {
+      "total": 19,
+      "breakfast": 3,
+      "lunch": 5,
+      "dinner": 8,
+      "incidentals": 3
+    },
+    {
+      "total": 20,
+      "breakfast": 3,
+      "lunch": 5,
+      "dinner": 8,
+      "incidentals": 4
+    },
+    {
+      "total": 21,
+      "breakfast": 3,
+      "lunch": 5,
+      "dinner": 9,
+      "incidentals": 4
+    },
+    {
+      "total": 22,
+      "breakfast": 3,
+      "lunch": 6,
+      "dinner": 9,
+      "incidentals": 4
+    },
+    {
+      "total": 23,
+      "breakfast": 3,
+      "lunch": 6,
+      "dinner": 9,
+      "incidentals": 5
+    },
+    {
+      "total": 24,
+      "breakfast": 4,
+      "lunch": 6,
+      "dinner": 9,
+      "incidentals": 5
+    },
+    {
+      "total": 25,
+      "breakfast": 4,
+      "lunch": 6,
+      "dinner": 10,
+      "incidentals": 5
+    },
+    {
+      "total": 26,
+      "breakfast": 4,
+      "lunch": 7,
+      "dinner": 10,
+      "incidentals": 5
+    },
+    {
+      "total": 27,
+      "breakfast": 4,
+      "lunch": 7,
+      "dinner": 11,
+      "incidentals": 5
+    },
+    {
+      "total": 28,
+      "breakfast": 4,
+      "lunch": 7,
+      "dinner": 11,
+      "incidentals": 6
+    },
+    {
+      "total": 29,
+      "breakfast": 4,
+      "lunch": 7,
+      "dinner": 12,
+      "incidentals": 6
+    },
+    {
+      "total": 30,
+      "breakfast": 5,
+      "lunch": 7,
+      "dinner": 12,
+      "incidentals": 6
+    },
+    {
+      "total": 31,
+      "breakfast": 5,
+      "lunch": 8,
+      "dinner": 12,
+      "incidentals": 6
+    },
+    {
+      "total": 32,
+      "breakfast": 5,
+      "lunch": 8,
+      "dinner": 13,
+      "incidentals": 6
+    },
+    {
+      "total": 33,
+      "breakfast": 5,
+      "lunch": 8,
+      "dinner": 13,
+      "incidentals": 7
+    },
+    {
+      "total": 34,
+      "breakfast": 5,
+      "lunch": 9,
+      "dinner": 13,
+      "incidentals": 7
+    },
+    {
+      "total": 35,
+      "breakfast": 5,
+      "lunch": 9,
+      "dinner": 14,
+      "incidentals": 7
+    },
+    {
+      "total": 36,
+      "breakfast": 5,
+      "lunch": 9,
+      "dinner": 15,
+      "incidentals": 7
+    },
+    {
+      "total": 37,
+      "breakfast": 6,
+      "lunch": 9,
+      "dinner": 15,
+      "incidentals": 7
+    },
+    {
+      "total": 38,
+      "breakfast": 6,
+      "lunch": 10,
+      "dinner": 15,
+      "incidentals": 7
+    },
+    {
+      "total": 39,
+      "breakfast": 6,
+      "lunch": 10,
+      "dinner": 16,
+      "incidentals": 7
+    },
+    {
+      "total": 40,
+      "breakfast": 6,
+      "lunch": 10,
+      "dinner": 16,
+      "incidentals": 8
+    },
+    {
+      "total": 41,
+      "breakfast": 6,
+      "lunch": 10,
+      "dinner": 17,
+      "incidentals": 8
+    },
+    {
+      "total": 42,
+      "breakfast": 6,
+      "lunch": 11,
+      "dinner": 17,
+      "incidentals": 8
+    },
+    {
+      "total": 43,
+      "breakfast": 6,
+      "lunch": 11,
+      "dinner": 17,
+      "incidentals": 9
+    },
+    {
+      "total": 44,
+      "breakfast": 7,
+      "lunch": 11,
+      "dinner": 17,
+      "incidentals": 9
+    },
+    {
+      "total": 45,
+      "breakfast": 7,
+      "lunch": 11,
+      "dinner": 18,
+      "incidentals": 9
+    },
+    {
+      "total": 46,
+      "breakfast": 7,
+      "lunch": 12,
+      "dinner": 18,
+      "incidentals": 9
+    },
+    {
+      "total": 47,
+      "breakfast": 7,
+      "lunch": 12,
+      "dinner": 19,
+      "incidentals": 9
+    },
+    {
+      "total": 48,
+      "breakfast": 7,
+      "lunch": 12,
+      "dinner": 19,
+      "incidentals": 10
+    },
+    {
+      "total": 49,
+      "breakfast": 7,
+      "lunch": 12,
+      "dinner": 20,
+      "incidentals": 10
+    },
+    {
+      "total": 50,
+      "breakfast": 8,
+      "lunch": 12,
+      "dinner": 20,
+      "incidentals": 10
+    },
+    {
+      "total": 51,
+      "breakfast": 8,
+      "lunch": 13,
+      "dinner": 20,
+      "incidentals": 10
+    },
+    {
+      "total": 52,
+      "breakfast": 8,
+      "lunch": 13,
+      "dinner": 21,
+      "incidentals": 10
+    },
+    {
+      "total": 53,
+      "breakfast": 8,
+      "lunch": 13,
+      "dinner": 21,
+      "incidentals": 11
+    },
+    {
+      "total": 54,
+      "breakfast": 8,
+      "lunch": 14,
+      "dinner": 21,
+      "incidentals": 11
+    },
+    {
+      "total": 55,
+      "breakfast": 8,
+      "lunch": 14,
+      "dinner": 22,
+      "incidentals": 11
+    },
+    {
+      "total": 56,
+      "breakfast": 8,
+      "lunch": 14,
+      "dinner": 23,
+      "incidentals": 11
+    },
+    {
+      "total": 57,
+      "breakfast": 9,
+      "lunch": 14,
+      "dinner": 23,
+      "incidentals": 11
+    },
+    {
+      "total": 58,
+      "breakfast": 9,
+      "lunch": 15,
+      "dinner": 23,
+      "incidentals": 11
+    },
+    {
+      "total": 59,
+      "breakfast": 9,
+      "lunch": 15,
+      "dinner": 24,
+      "incidentals": 11
+    },
+    {
+      "total": 60,
+      "breakfast": 9,
+      "lunch": 15,
+      "dinner": 24,
+      "incidentals": 12
+    },
+    {
+      "total": 61,
+      "breakfast": 9,
+      "lunch": 15,
+      "dinner": 25,
+      "incidentals": 12
+    },
+    {
+      "total": 62,
+      "breakfast": 9,
+      "lunch": 16,
+      "dinner": 25,
+      "incidentals": 12
+    },
+    {
+      "total": 63,
+      "breakfast": 9,
+      "lunch": 16,
+      "dinner": 25,
+      "incidentals": 13
+    },
+    {
+      "total": 64,
+      "breakfast": 10,
+      "lunch": 16,
+      "dinner": 25,
+      "incidentals": 13
+    },
+    {
+      "total": 65,
+      "breakfast": 10,
+      "lunch": 16,
+      "dinner": 26,
+      "incidentals": 13
+    },
+    {
+      "total": 66,
+      "breakfast": 10,
+      "lunch": 17,
+      "dinner": 26,
+      "incidentals": 13
+    },
+    {
+      "total": 67,
+      "breakfast": 10,
+      "lunch": 17,
+      "dinner": 27,
+      "incidentals": 13
+    },
+    {
+      "total": 68,
+      "breakfast": 10,
+      "lunch": 17,
+      "dinner": 27,
+      "incidentals": 14
+    },
+    {
+      "total": 69,
+      "breakfast": 10,
+      "lunch": 17,
+      "dinner": 28,
+      "incidentals": 14
+    },
+    {
+      "total": 70,
+      "breakfast": 11,
+      "lunch": 17,
+      "dinner": 28,
+      "incidentals": 14
+    },
+    {
+      "total": 71,
+      "breakfast": 11,
+      "lunch": 18,
+      "dinner": 28,
+      "incidentals": 14
+    },
+    {
+      "total": 72,
+      "breakfast": 11,
+      "lunch": 18,
+      "dinner": 29,
+      "incidentals": 14
+    },
+    {
+      "total": 73,
+      "breakfast": 11,
+      "lunch": 18,
+      "dinner": 29,
+      "incidentals": 15
+    },
+    {
+      "total": 74,
+      "breakfast": 11,
+      "lunch": 19,
+      "dinner": 29,
+      "incidentals": 15
+    },
+    {
+      "total": 75,
+      "breakfast": 11,
+      "lunch": 19,
+      "dinner": 30,
+      "incidentals": 15
+    },
+    {
+      "total": 76,
+      "breakfast": 11,
+      "lunch": 19,
+      "dinner": 31,
+      "incidentals": 15
+    },
+    {
+      "total": 77,
+      "breakfast": 12,
+      "lunch": 19,
+      "dinner": 31,
+      "incidentals": 15
+    },
+    {
+      "total": 78,
+      "breakfast": 12,
+      "lunch": 20,
+      "dinner": 31,
+      "incidentals": 15
+    },
+    {
+      "total": 79,
+      "breakfast": 12,
+      "lunch": 20,
+      "dinner": 32,
+      "incidentals": 15
+    },
+    {
+      "total": 80,
+      "breakfast": 12,
+      "lunch": 20,
+      "dinner": 32,
+      "incidentals": 16
+    },
+    {
+      "total": 81,
+      "breakfast": 12,
+      "lunch": 20,
+      "dinner": 33,
+      "incidentals": 16
+    },
+    {
+      "total": 82,
+      "breakfast": 12,
+      "lunch": 21,
+      "dinner": 33,
+      "incidentals": 16
+    },
+    {
+      "total": 83,
+      "breakfast": 12,
+      "lunch": 21,
+      "dinner": 33,
+      "incidentals": 17
+    },
+    {
+      "total": 84,
+      "breakfast": 13,
+      "lunch": 21,
+      "dinner": 33,
+      "incidentals": 17
+    },
+    {
+      "total": 85,
+      "breakfast": 13,
+      "lunch": 21,
+      "dinner": 34,
+      "incidentals": 17
+    },
+    {
+      "total": 86,
+      "breakfast": 13,
+      "lunch": 22,
+      "dinner": 34,
+      "incidentals": 17
+    },
+    {
+      "total": 87,
+      "breakfast": 13,
+      "lunch": 22,
+      "dinner": 35,
+      "incidentals": 17
+    },
+    {
+      "total": 88,
+      "breakfast": 13,
+      "lunch": 22,
+      "dinner": 35,
+      "incidentals": 18
+    },
+    {
+      "total": 89,
+      "breakfast": 13,
+      "lunch": 22,
+      "dinner": 36,
+      "incidentals": 18
+    },
+    {
+      "total": 90,
+      "breakfast": 14,
+      "lunch": 22,
+      "dinner": 36,
+      "incidentals": 18
+    },
+    {
+      "total": 91,
+      "breakfast": 14,
+      "lunch": 23,
+      "dinner": 36,
+      "incidentals": 18
+    },
+    {
+      "total": 92,
+      "breakfast": 14,
+      "lunch": 23,
+      "dinner": 37,
+      "incidentals": 18
+    },
+    {
+      "total": 93,
+      "breakfast": 14,
+      "lunch": 23,
+      "dinner": 37,
+      "incidentals": 19
+    },
+    {
+      "total": 94,
+      "breakfast": 14,
+      "lunch": 24,
+      "dinner": 37,
+      "incidentals": 19
+    },
+    {
+      "total": 95,
+      "breakfast": 14,
+      "lunch": 24,
+      "dinner": 38,
+      "incidentals": 19
+    },
+    {
+      "total": 96,
+      "breakfast": 14,
+      "lunch": 24,
+      "dinner": 39,
+      "incidentals": 19
+    },
+    {
+      "total": 97,
+      "breakfast": 15,
+      "lunch": 24,
+      "dinner": 39,
+      "incidentals": 19
+    },
+    {
+      "total": 98,
+      "breakfast": 15,
+      "lunch": 25,
+      "dinner": 39,
+      "incidentals": 19
+    },
+    {
+      "total": 99,
+      "breakfast": 15,
+      "lunch": 25,
+      "dinner": 40,
+      "incidentals": 19
+    },
+    {
+      "total": 100,
+      "breakfast": 15,
+      "lunch": 25,
+      "dinner": 40,
+      "incidentals": 20
+    },
+    {
+      "total": 101,
+      "breakfast": 15,
+      "lunch": 25,
+      "dinner": 41,
+      "incidentals": 20
+    },
+    {
+      "total": 102,
+      "breakfast": 15,
+      "lunch": 26,
+      "dinner": 41,
+      "incidentals": 20
+    },
+    {
+      "total": 103,
+      "breakfast": 15,
+      "lunch": 26,
+      "dinner": 41,
+      "incidentals": 21
+    },
+    {
+      "total": 104,
+      "breakfast": 16,
+      "lunch": 26,
+      "dinner": 41,
+      "incidentals": 21
+    },
+    {
+      "total": 105,
+      "breakfast": 16,
+      "lunch": 26,
+      "dinner": 42,
+      "incidentals": 21
+    },
+    {
+      "total": 106,
+      "breakfast": 16,
+      "lunch": 27,
+      "dinner": 42,
+      "incidentals": 21
+    },
+    {
+      "total": 107,
+      "breakfast": 16,
+      "lunch": 27,
+      "dinner": 43,
+      "incidentals": 21
+    },
+    {
+      "total": 108,
+      "breakfast": 16,
+      "lunch": 27,
+      "dinner": 43,
+      "incidentals": 22
+    },
+    {
+      "total": 109,
+      "breakfast": 16,
+      "lunch": 27,
+      "dinner": 44,
+      "incidentals": 22
+    },
+    {
+      "total": 110,
+      "breakfast": 17,
+      "lunch": 27,
+      "dinner": 44,
+      "incidentals": 22
+    },
+    {
+      "total": 111,
+      "breakfast": 17,
+      "lunch": 28,
+      "dinner": 44,
+      "incidentals": 22
+    },
+    {
+      "total": 112,
+      "breakfast": 17,
+      "lunch": 28,
+      "dinner": 45,
+      "incidentals": 22
+    },
+    {
+      "total": 113,
+      "breakfast": 17,
+      "lunch": 28,
+      "dinner": 45,
+      "incidentals": 23
+    },
+    {
+      "total": 114,
+      "breakfast": 17,
+      "lunch": 29,
+      "dinner": 45,
+      "incidentals": 23
+    },
+    {
+      "total": 115,
+      "breakfast": 17,
+      "lunch": 29,
+      "dinner": 46,
+      "incidentals": 23
+    },
+    {
+      "total": 116,
+      "breakfast": 17,
+      "lunch": 29,
+      "dinner": 47,
+      "incidentals": 23
+    },
+    {
+      "total": 117,
+      "breakfast": 18,
+      "lunch": 29,
+      "dinner": 47,
+      "incidentals": 23
+    },
+    {
+      "total": 118,
+      "breakfast": 18,
+      "lunch": 30,
+      "dinner": 47,
+      "incidentals": 23
+    },
+    {
+      "total": 119,
+      "breakfast": 18,
+      "lunch": 30,
+      "dinner": 48,
+      "incidentals": 23
+    },
+    {
+      "total": 120,
+      "breakfast": 18,
+      "lunch": 30,
+      "dinner": 48,
+      "incidentals": 24
+    },
+    {
+      "total": 121,
+      "breakfast": 18,
+      "lunch": 30,
+      "dinner": 49,
+      "incidentals": 24
+    },
+    {
+      "total": 122,
+      "breakfast": 18,
+      "lunch": 31,
+      "dinner": 49,
+      "incidentals": 24
+    },
+    {
+      "total": 123,
+      "breakfast": 18,
+      "lunch": 31,
+      "dinner": 49,
+      "incidentals": 25
+    },
+    {
+      "total": 124,
+      "breakfast": 19,
+      "lunch": 31,
+      "dinner": 49,
+      "incidentals": 25
+    },
+    {
+      "total": 125,
+      "breakfast": 19,
+      "lunch": 31,
+      "dinner": 50,
+      "incidentals": 25
+    },
+    {
+      "total": 126,
+      "breakfast": 19,
+      "lunch": 32,
+      "dinner": 50,
+      "incidentals": 25
+    },
+    {
+      "total": 127,
+      "breakfast": 19,
+      "lunch": 32,
+      "dinner": 51,
+      "incidentals": 25
+    },
+    {
+      "total": 128,
+      "breakfast": 19,
+      "lunch": 32,
+      "dinner": 51,
+      "incidentals": 26
+    },
+    {
+      "total": 129,
+      "breakfast": 19,
+      "lunch": 32,
+      "dinner": 52,
+      "incidentals": 26
+    },
+    {
+      "total": 130,
+      "breakfast": 20,
+      "lunch": 32,
+      "dinner": 52,
+      "incidentals": 26
+    },
+    {
+      "total": 131,
+      "breakfast": 20,
+      "lunch": 33,
+      "dinner": 52,
+      "incidentals": 26
+    },
+    {
+      "total": 132,
+      "breakfast": 20,
+      "lunch": 33,
+      "dinner": 53,
+      "incidentals": 26
+    },
+    {
+      "total": 133,
+      "breakfast": 20,
+      "lunch": 33,
+      "dinner": 53,
+      "incidentals": 27
+    },
+    {
+      "total": 134,
+      "breakfast": 20,
+      "lunch": 34,
+      "dinner": 53,
+      "incidentals": 27
+    },
+    {
+      "total": 135,
+      "breakfast": 20,
+      "lunch": 34,
+      "dinner": 54,
+      "incidentals": 27
+    },
+    {
+      "total": 136,
+      "breakfast": 20,
+      "lunch": 34,
+      "dinner": 55,
+      "incidentals": 27
+    },
+    {
+      "total": 137,
+      "breakfast": 21,
+      "lunch": 34,
+      "dinner": 55,
+      "incidentals": 27
+    },
+    {
+      "total": 138,
+      "breakfast": 21,
+      "lunch": 35,
+      "dinner": 55,
+      "incidentals": 27
+    },
+    {
+      "total": 139,
+      "breakfast": 21,
+      "lunch": 35,
+      "dinner": 56,
+      "incidentals": 27
+    },
+    {
+      "total": 140,
+      "breakfast": 21,
+      "lunch": 35,
+      "dinner": 56,
+      "incidentals": 28
+    },
+    {
+      "total": 141,
+      "breakfast": 21,
+      "lunch": 35,
+      "dinner": 57,
+      "incidentals": 28
+    },
+    {
+      "total": 142,
+      "breakfast": 21,
+      "lunch": 36,
+      "dinner": 57,
+      "incidentals": 28
+    },
+    {
+      "total": 143,
+      "breakfast": 21,
+      "lunch": 36,
+      "dinner": 57,
+      "incidentals": 29
+    },
+    {
+      "total": 144,
+      "breakfast": 22,
+      "lunch": 36,
+      "dinner": 57,
+      "incidentals": 29
+    },
+    {
+      "total": 145,
+      "breakfast": 22,
+      "lunch": 36,
+      "dinner": 58,
+      "incidentals": 29
+    },
+    {
+      "total": 146,
+      "breakfast": 22,
+      "lunch": 37,
+      "dinner": 58,
+      "incidentals": 29
+    },
+    {
+      "total": 147,
+      "breakfast": 22,
+      "lunch": 37,
+      "dinner": 59,
+      "incidentals": 29
+    },
+    {
+      "total": 148,
+      "breakfast": 22,
+      "lunch": 37,
+      "dinner": 59,
+      "incidentals": 30
+    },
+    {
+      "total": 149,
+      "breakfast": 22,
+      "lunch": 37,
+      "dinner": 60,
+      "incidentals": 30
+    },
+    {
+      "total": 150,
+      "breakfast": 23,
+      "lunch": 37,
+      "dinner": 60,
+      "incidentals": 30
+    },
+    {
+      "total": 151,
+      "breakfast": 23,
+      "lunch": 38,
+      "dinner": 60,
+      "incidentals": 30
+    },
+    {
+      "total": 152,
+      "breakfast": 23,
+      "lunch": 38,
+      "dinner": 61,
+      "incidentals": 30
+    },
+    {
+      "total": 153,
+      "breakfast": 23,
+      "lunch": 38,
+      "dinner": 61,
+      "incidentals": 31
+    },
+    {
+      "total": 154,
+      "breakfast": 23,
+      "lunch": 39,
+      "dinner": 61,
+      "incidentals": 31
+    },
+    {
+      "total": 155,
+      "breakfast": 23,
+      "lunch": 39,
+      "dinner": 62,
+      "incidentals": 31
+    },
+    {
+      "total": 156,
+      "breakfast": 23,
+      "lunch": 39,
+      "dinner": 63,
+      "incidentals": 31
+    },
+    {
+      "total": 157,
+      "breakfast": 24,
+      "lunch": 39,
+      "dinner": 63,
+      "incidentals": 31
+    },
+    {
+      "total": 158,
+      "breakfast": 24,
+      "lunch": 40,
+      "dinner": 63,
+      "incidentals": 31
+    },
+    {
+      "total": 159,
+      "breakfast": 24,
+      "lunch": 40,
+      "dinner": 64,
+      "incidentals": 31
+    },
+    {
+      "total": 160,
+      "breakfast": 24,
+      "lunch": 40,
+      "dinner": 64,
+      "incidentals": 32
+    },
+    {
+      "total": 161,
+      "breakfast": 24,
+      "lunch": 40,
+      "dinner": 65,
+      "incidentals": 32
+    },
+    {
+      "total": 162,
+      "breakfast": 24,
+      "lunch": 41,
+      "dinner": 65,
+      "incidentals": 32
+    },
+    {
+      "total": 163,
+      "breakfast": 24,
+      "lunch": 41,
+      "dinner": 65,
+      "incidentals": 33
+    },
+    {
+      "total": 164,
+      "breakfast": 25,
+      "lunch": 41,
+      "dinner": 65,
+      "incidentals": 33
+    },
+    {
+      "total": 165,
+      "breakfast": 25,
+      "lunch": 41,
+      "dinner": 66,
+      "incidentals": 33
+    },
+    {
+      "total": 166,
+      "breakfast": 25,
+      "lunch": 42,
+      "dinner": 66,
+      "incidentals": 33
+    },
+    {
+      "total": 167,
+      "breakfast": 25,
+      "lunch": 42,
+      "dinner": 67,
+      "incidentals": 33
+    },
+    {
+      "total": 168,
+      "breakfast": 25,
+      "lunch": 42,
+      "dinner": 67,
+      "incidentals": 34
+    },
+    {
+      "total": 169,
+      "breakfast": 25,
+      "lunch": 42,
+      "dinner": 68,
+      "incidentals": 34
+    },
+    {
+      "total": 170,
+      "breakfast": 26,
+      "lunch": 42,
+      "dinner": 68,
+      "incidentals": 34
+    },
+    {
+      "total": 171,
+      "breakfast": 26,
+      "lunch": 43,
+      "dinner": 68,
+      "incidentals": 34
+    },
+    {
+      "total": 172,
+      "breakfast": 26,
+      "lunch": 43,
+      "dinner": 69,
+      "incidentals": 34
+    },
+    {
+      "total": 173,
+      "breakfast": 26,
+      "lunch": 43,
+      "dinner": 69,
+      "incidentals": 35
+    },
+    {
+      "total": 174,
+      "breakfast": 26,
+      "lunch": 44,
+      "dinner": 69,
+      "incidentals": 35
+    },
+    {
+      "total": 175,
+      "breakfast": 26,
+      "lunch": 44,
+      "dinner": 70,
+      "incidentals": 35
+    },
+    {
+      "total": 176,
+      "breakfast": 26,
+      "lunch": 44,
+      "dinner": 71,
+      "incidentals": 35
+    },
+    {
+      "total": 177,
+      "breakfast": 27,
+      "lunch": 44,
+      "dinner": 71,
+      "incidentals": 35
+    },
+    {
+      "total": 178,
+      "breakfast": 27,
+      "lunch": 45,
+      "dinner": 71,
+      "incidentals": 35
+    },
+    {
+      "total": 179,
+      "breakfast": 27,
+      "lunch": 45,
+      "dinner": 72,
+      "incidentals": 35
+    },
+    {
+      "total": 180,
+      "breakfast": 27,
+      "lunch": 45,
+      "dinner": 72,
+      "incidentals": 36
+    },
+    {
+      "total": 181,
+      "breakfast": 27,
+      "lunch": 45,
+      "dinner": 73,
+      "incidentals": 36
+    },
+    {
+      "total": 182,
+      "breakfast": 27,
+      "lunch": 46,
+      "dinner": 73,
+      "incidentals": 36
+    },
+    {
+      "total": 183,
+      "breakfast": 27,
+      "lunch": 46,
+      "dinner": 73,
+      "incidentals": 37
+    },
+    {
+      "total": 184,
+      "breakfast": 28,
+      "lunch": 46,
+      "dinner": 73,
+      "incidentals": 37
+    },
+    {
+      "total": 185,
+      "breakfast": 28,
+      "lunch": 46,
+      "dinner": 74,
+      "incidentals": 37
+    },
+    {
+      "total": 186,
+      "breakfast": 28,
+      "lunch": 47,
+      "dinner": 74,
+      "incidentals": 37
+    },
+    {
+      "total": 187,
+      "breakfast": 28,
+      "lunch": 47,
+      "dinner": 75,
+      "incidentals": 37
+    },
+    {
+      "total": 188,
+      "breakfast": 28,
+      "lunch": 47,
+      "dinner": 75,
+      "incidentals": 38
+    },
+    {
+      "total": 189,
+      "breakfast": 28,
+      "lunch": 47,
+      "dinner": 76,
+      "incidentals": 38
+    },
+    {
+      "total": 190,
+      "breakfast": 29,
+      "lunch": 47,
+      "dinner": 76,
+      "incidentals": 38
+    },
+    {
+      "total": 191,
+      "breakfast": 29,
+      "lunch": 48,
+      "dinner": 76,
+      "incidentals": 38
+    },
+    {
+      "total": 192,
+      "breakfast": 29,
+      "lunch": 48,
+      "dinner": 77,
+      "incidentals": 38
+    },
+    {
+      "total": 193,
+      "breakfast": 29,
+      "lunch": 48,
+      "dinner": 77,
+      "incidentals": 39
+    },
+    {
+      "total": 194,
+      "breakfast": 29,
+      "lunch": 49,
+      "dinner": 77,
+      "incidentals": 39
+    },
+    {
+      "total": 195,
+      "breakfast": 29,
+      "lunch": 49,
+      "dinner": 78,
+      "incidentals": 39
+    },
+    {
+      "total": 196,
+      "breakfast": 29,
+      "lunch": 49,
+      "dinner": 79,
+      "incidentals": 39
+    },
+    {
+      "total": 197,
+      "breakfast": 30,
+      "lunch": 49,
+      "dinner": 79,
+      "incidentals": 39
+    },
+    {
+      "total": 198,
+      "breakfast": 30,
+      "lunch": 50,
+      "dinner": 79,
+      "incidentals": 39
+    },
+    {
+      "total": 199,
+      "breakfast": 30,
+      "lunch": 50,
+      "dinner": 80,
+      "incidentals": 39
+    },
+    {
+      "total": 200,
+      "breakfast": 30,
+      "lunch": 50,
+      "dinner": 80,
+      "incidentals": 40
+    },
+    {
+      "total": 201,
+      "breakfast": 30,
+      "lunch": 50,
+      "dinner": 81,
+      "incidentals": 40
+    },
+    {
+      "total": 202,
+      "breakfast": 30,
+      "lunch": 51,
+      "dinner": 81,
+      "incidentals": 40
+    },
+    {
+      "total": 203,
+      "breakfast": 30,
+      "lunch": 51,
+      "dinner": 81,
+      "incidentals": 41
+    },
+    {
+      "total": 204,
+      "breakfast": 31,
+      "lunch": 51,
+      "dinner": 81,
+      "incidentals": 41
+    },
+    {
+      "total": 205,
+      "breakfast": 31,
+      "lunch": 51,
+      "dinner": 82,
+      "incidentals": 41
+    },
+    {
+      "total": 206,
+      "breakfast": 31,
+      "lunch": 52,
+      "dinner": 82,
+      "incidentals": 41
+    },
+    {
+      "total": 207,
+      "breakfast": 31,
+      "lunch": 52,
+      "dinner": 83,
+      "incidentals": 41
+    },
+    {
+      "total": 208,
+      "breakfast": 31,
+      "lunch": 52,
+      "dinner": 83,
+      "incidentals": 42
+    },
+    {
+      "total": 209,
+      "breakfast": 31,
+      "lunch": 52,
+      "dinner": 84,
+      "incidentals": 42
+    },
+    {
+      "total": 210,
+      "breakfast": 32,
+      "lunch": 52,
+      "dinner": 84,
+      "incidentals": 42
+    },
+    {
+      "total": 211,
+      "breakfast": 32,
+      "lunch": 53,
+      "dinner": 84,
+      "incidentals": 42
+    },
+    {
+      "total": 212,
+      "breakfast": 32,
+      "lunch": 53,
+      "dinner": 85,
+      "incidentals": 42
+    },
+    {
+      "total": 213,
+      "breakfast": 32,
+      "lunch": 53,
+      "dinner": 85,
+      "incidentals": 43
+    },
+    {
+      "total": 214,
+      "breakfast": 32,
+      "lunch": 54,
+      "dinner": 85,
+      "incidentals": 43
+    },
+    {
+      "total": 215,
+      "breakfast": 32,
+      "lunch": 54,
+      "dinner": 86,
+      "incidentals": 43
+    },
+    {
+      "total": 216,
+      "breakfast": 32,
+      "lunch": 54,
+      "dinner": 87,
+      "incidentals": 43
+    },
+    {
+      "total": 217,
+      "breakfast": 33,
+      "lunch": 54,
+      "dinner": 87,
+      "incidentals": 43
+    },
+    {
+      "total": 218,
+      "breakfast": 33,
+      "lunch": 55,
+      "dinner": 87,
+      "incidentals": 43
+    },
+    {
+      "total": 219,
+      "breakfast": 33,
+      "lunch": 55,
+      "dinner": 88,
+      "incidentals": 43
+    },
+    {
+      "total": 220,
+      "breakfast": 33,
+      "lunch": 55,
+      "dinner": 88,
+      "incidentals": 44
+    },
+    {
+      "total": 221,
+      "breakfast": 33,
+      "lunch": 55,
+      "dinner": 89,
+      "incidentals": 44
+    },
+    {
+      "total": 222,
+      "breakfast": 33,
+      "lunch": 56,
+      "dinner": 89,
+      "incidentals": 44
+    },
+    {
+      "total": 223,
+      "breakfast": 33,
+      "lunch": 56,
+      "dinner": 89,
+      "incidentals": 45
+    },
+    {
+      "total": 224,
+      "breakfast": 34,
+      "lunch": 56,
+      "dinner": 89,
+      "incidentals": 45
+    },
+    {
+      "total": 225,
+      "breakfast": 34,
+      "lunch": 56,
+      "dinner": 90,
+      "incidentals": 45
+    },
+    {
+      "total": 226,
+      "breakfast": 34,
+      "lunch": 57,
+      "dinner": 90,
+      "incidentals": 45
+    },
+    {
+      "total": 227,
+      "breakfast": 34,
+      "lunch": 57,
+      "dinner": 91,
+      "incidentals": 45
+    },
+    {
+      "total": 228,
+      "breakfast": 34,
+      "lunch": 57,
+      "dinner": 91,
+      "incidentals": 46
+    },
+    {
+      "total": 229,
+      "breakfast": 34,
+      "lunch": 57,
+      "dinner": 92,
+      "incidentals": 46
+    },
+    {
+      "total": 230,
+      "breakfast": 35,
+      "lunch": 57,
+      "dinner": 92,
+      "incidentals": 46
+    },
+    {
+      "total": 231,
+      "breakfast": 35,
+      "lunch": 58,
+      "dinner": 92,
+      "incidentals": 46
+    },
+    {
+      "total": 232,
+      "breakfast": 35,
+      "lunch": 58,
+      "dinner": 93,
+      "incidentals": 46
+    },
+    {
+      "total": 233,
+      "breakfast": 35,
+      "lunch": 58,
+      "dinner": 93,
+      "incidentals": 47
+    },
+    {
+      "total": 234,
+      "breakfast": 35,
+      "lunch": 59,
+      "dinner": 93,
+      "incidentals": 47
+    },
+    {
+      "total": 235,
+      "breakfast": 35,
+      "lunch": 59,
+      "dinner": 94,
+      "incidentals": 47
+    },
+    {
+      "total": 236,
+      "breakfast": 35,
+      "lunch": 59,
+      "dinner": 95,
+      "incidentals": 47
+    },
+    {
+      "total": 237,
+      "breakfast": 36,
+      "lunch": 59,
+      "dinner": 95,
+      "incidentals": 47
+    },
+    {
+      "total": 238,
+      "breakfast": 36,
+      "lunch": 60,
+      "dinner": 95,
+      "incidentals": 47
+    },
+    {
+      "total": 239,
+      "breakfast": 36,
+      "lunch": 60,
+      "dinner": 96,
+      "incidentals": 47
+    },
+    {
+      "total": 240,
+      "breakfast": 36,
+      "lunch": 60,
+      "dinner": 96,
+      "incidentals": 48
+    },
+    {
+      "total": 241,
+      "breakfast": 36,
+      "lunch": 60,
+      "dinner": 97,
+      "incidentals": 48
+    },
+    {
+      "total": 242,
+      "breakfast": 36,
+      "lunch": 61,
+      "dinner": 97,
+      "incidentals": 48
+    },
+    {
+      "total": 243,
+      "breakfast": 36,
+      "lunch": 61,
+      "dinner": 97,
+      "incidentals": 49
+    },
+    {
+      "total": 244,
+      "breakfast": 37,
+      "lunch": 61,
+      "dinner": 97,
+      "incidentals": 49
+    },
+    {
+      "total": 245,
+      "breakfast": 37,
+      "lunch": 61,
+      "dinner": 98,
+      "incidentals": 49
+    },
+    {
+      "total": 246,
+      "breakfast": 37,
+      "lunch": 62,
+      "dinner": 98,
+      "incidentals": 49
+    },
+    {
+      "total": 247,
+      "breakfast": 37,
+      "lunch": 62,
+      "dinner": 99,
+      "incidentals": 49
+    },
+    {
+      "total": 248,
+      "breakfast": 37,
+      "lunch": 62,
+      "dinner": 99,
+      "incidentals": 50
+    },
+    {
+      "total": 249,
+      "breakfast": 37,
+      "lunch": 62,
+      "dinner": 100,
+      "incidentals": 50
+    },
+    {
+      "total": 250,
+      "breakfast": 38,
+      "lunch": 62,
+      "dinner": 100,
+      "incidentals": 50
+    },
+    {
+      "total": 251,
+      "breakfast": 38,
+      "lunch": 63,
+      "dinner": 100,
+      "incidentals": 50
+    },
+    {
+      "total": 252,
+      "breakfast": 38,
+      "lunch": 63,
+      "dinner": 101,
+      "incidentals": 50
+    },
+    {
+      "total": 253,
+      "breakfast": 38,
+      "lunch": 63,
+      "dinner": 101,
+      "incidentals": 51
+    },
+    {
+      "total": 254,
+      "breakfast": 38,
+      "lunch": 64,
+      "dinner": 101,
+      "incidentals": 51
+    },
+    {
+      "total": 255,
+      "breakfast": 38,
+      "lunch": 64,
+      "dinner": 102,
+      "incidentals": 51
+    },
+    {
+      "total": 256,
+      "breakfast": 38,
+      "lunch": 64,
+      "dinner": 103,
+      "incidentals": 51
+    },
+    {
+      "total": 257,
+      "breakfast": 39,
+      "lunch": 64,
+      "dinner": 103,
+      "incidentals": 51
+    },
+    {
+      "total": 258,
+      "breakfast": 39,
+      "lunch": 65,
+      "dinner": 103,
+      "incidentals": 51
+    },
+    {
+      "total": 259,
+      "breakfast": 39,
+      "lunch": 65,
+      "dinner": 104,
+      "incidentals": 51
+    },
+    {
+      "total": 260,
+      "breakfast": 39,
+      "lunch": 65,
+      "dinner": 104,
+      "incidentals": 52
+    },
+    {
+      "total": 261,
+      "breakfast": 39,
+      "lunch": 65,
+      "dinner": 105,
+      "incidentals": 52
+    },
+    {
+      "total": 262,
+      "breakfast": 39,
+      "lunch": 66,
+      "dinner": 105,
+      "incidentals": 52
+    },
+    {
+      "total": 263,
+      "breakfast": 39,
+      "lunch": 66,
+      "dinner": 105,
+      "incidentals": 53
+    },
+    {
+      "total": 264,
+      "breakfast": 40,
+      "lunch": 66,
+      "dinner": 105,
+      "incidentals": 53
+    },
+    {
+      "total": 265,
+      "breakfast": 40,
+      "lunch": 66,
+      "dinner": 106,
+      "incidentals": 53
     }
   ]
 }
