@@ -363,7 +363,7 @@
 
   <!-- Version footer -->
   <div style="text-align:center;padding:16px 0;font-size:0.75rem;color:var(--cmu-gray);border-top:1px solid var(--border);margin-top:10px;">
-    v1.5 | FY2026 Rates (seasonal) | Domestic: 296 locations | International: 1,034 locations (228 countries) |
+    v1.6 | FY2026 Rates (seasonal) | Domestic: 296 locations | International: 1,034 locations (228 countries) |
     <a href="https://github.com/cmuq-operations/business-travel-expense" target="_blank" style="color:var(--cmu-gray);">GitHub</a>
   </div>
 
@@ -912,9 +912,10 @@ function renderGrid() {
     const bChk = day.providedBreakfast ? 'checked' : '';
     const lChk = day.providedLunch ? 'checked' : '';
     const dChk = day.providedDinner ? 'checked' : '';
+    const allChk = (day.providedBreakfast && day.providedLunch && day.providedDinner) ? 'checked' : '';
 
     let html = `
-      <td>${dateStr}</td>
+      <td><input type="checkbox" ${allChk} onchange="toggleDay(${idx}, this.checked)" title="Deduct all meals for this day" style="margin-right:6px;">${dateStr}</td>
       <td style="text-align:center">${day.dayNum}</td>
       <td class="amount">$${day.adjustedMIE.toFixed(2)}${rateNote}</td>
       <td class="meal-cell" id="bCell_${idx}"><input type="checkbox" ${bChk} onchange="toggleMeal(${idx},'breakfast',this.checked)"><span>$${day.breakfast.toFixed(2)}</span></td>
@@ -938,6 +939,14 @@ function toggleMeal(idx, meal, checked) {
   if (meal === 'breakfast') days[idx].providedBreakfast = checked;
   else if (meal === 'lunch') days[idx].providedLunch = checked;
   else if (meal === 'dinner') days[idx].providedDinner = checked;
+  recalculate();
+}
+
+function toggleDay(idx, checked) {
+  days[idx].providedBreakfast = checked;
+  days[idx].providedLunch = checked;
+  days[idx].providedDinner = checked;
+  renderGrid();
   recalculate();
 }
 
